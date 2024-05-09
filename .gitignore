@@ -154,6 +154,8 @@ cython_debug/
 
  .idea/
 
- t.py
- ttt.py
- tmp.*
+# Some service files
+t.py
+ttt.py
+tmp.py
+
