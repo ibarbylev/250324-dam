@@ -153,6 +153,7 @@ dmypy.json
 cython_debug/
 
  .idea/
- t.*
- ttt.*
+
+ t.py
+ ttt.py
  tmp.*
