@@ -17,15 +17,15 @@ print(" ============== variant 2 ==================== ")
 
 
 def smth_2():
-    global i
-    i = 100
-    print(i)
+    global j
+    j = 100
+    print(j)
 
 
-i = 1
+j = 1
 for _ in range(10):
-    if i % 2 == 0:
-        print(i)
+    if j % 2 == 0:
+        print(j)
     else:
         smth_2()
-    i += 1
+    j += 1
