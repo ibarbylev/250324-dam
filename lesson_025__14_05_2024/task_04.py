@@ -7,7 +7,10 @@
 
 
 def factorial(n: int) -> None:
-    print()
+    result = 1
+    for i in range(1, n+1):
+        result *= i
+    print(result)
 
 
 factorial(0)  # 1
