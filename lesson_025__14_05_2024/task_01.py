@@ -9,8 +9,8 @@ true - true, true - false, false - false, false - true.
 
 
 def can_you_sleep(is_weekday: bool, is_vacation: bool) -> None:
-    word = " НЕ"
-    print(f"можете{word} поспать")
+    word = "НЕ "
+    print(f"{word}можете поспать")
 
 
 can_you_sleep(False, False)
