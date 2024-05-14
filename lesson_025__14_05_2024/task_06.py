@@ -4,4 +4,8 @@
 Имя: <имя>, Фамилия <фамилия>, Возраст <возраст>.
 """
 
-
+with open("persons.txt", "r") as file:
+    for line in file:
+        data = line.strip().split(";")
+        surname, name, age = data
+        print("Фамилия: {}, Имя: {}, Возраст: {}".format(surname, name, age))

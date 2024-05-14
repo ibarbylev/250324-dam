@@ -6,7 +6,7 @@
 #     num = input("Введите число {}: ".format(i+1))
 #     numbers.append(num)
 #
-# with open("numbers.txt", "w") as file:
+# with open("numbers.txt", "w", encoding="utf-8") as file:
 #     for num in numbers:
 #         file.write(num + "\n")
 
@@ -16,7 +16,7 @@
 #     num = input("Введите число {}: ".format(i+1))
 #     numbers.append(num)
 #
-# with open("numbers.txt", "w") as file:
+# with open("numbers.txt", "w", encoding="utf-8") as file:
 #     file.write(";".join(numbers))
 # print("Числа записаны в столбец в файл numbers.txt")
 
@@ -31,7 +31,7 @@
 # -------- var 4 ---------
 # numbers = [input("Введите число: ") for _ in range(5)]
 #
-# with open("numbers.txt", "w") as file:
+# with open("numbers.txt", "w", encoding="utf-8") as file:
 #     file.write(", ".join(numbers))
 
 # -------- var 5 ---------
@@ -40,7 +40,7 @@ numbers_list = numbers_input.split()
 
 numbers = [int(num) for num in numbers_list]
 
-with open('numbers.txt', 'w') as file:
+with open('numbers.txt', 'w', encoding="utf-8") as file:
     for number in numbers:
         # file.write(f"{number}\t")
         file.write(f"{number}")
