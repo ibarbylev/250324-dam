@@ -6,7 +6,13 @@
 
 
 def diff_between_21_and_x(x: int) -> None:
-    print()
+    # if x <= 21:
+    #     print(21 - x)
+    # else:
+    #     print(2 * (x - 21))
+
+    result = 21 - x if x <= 21 else 2 * (x - 21)
+    print(result)
 
 
 diff_between_21_and_x(8)
