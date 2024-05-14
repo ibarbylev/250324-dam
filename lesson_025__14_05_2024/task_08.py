@@ -32,14 +32,15 @@ penguin_text = """
   ^^ ^^    
 """
 
-penguin = []
+penguin_lst = []
 for line in penguin_text.split('\n'):
-    if line.split():
-        penguin.append(line[:9])
+    if line.strip():
+        penguin_lst.append(line[:9])
 
-print(penguin)
+
 def get_penguins(num: int) -> None:
-    print()
+    for line in penguin_lst:
+        print(" ".join([line] * num))
 
 
 get_penguins(5)
