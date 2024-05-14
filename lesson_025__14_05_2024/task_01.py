@@ -9,7 +9,10 @@ true - true, true - false, false - false, false - true.
 
 
 def can_you_sleep(is_weekday: bool, is_vacation: bool) -> None:
-    word = "НЕ "
+    if not (is_weekday or is_vacation):
+        word = ""
+    else:
+        word = "НЕ "
     print(f"{word}можете поспать")
 
 
