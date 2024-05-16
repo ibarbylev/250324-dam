@@ -27,7 +27,12 @@ def create_new_folder():
     os.chdir(new_folder_name)
     new_folder_abspath = os.path.abspath('.')
 
-    for folder in ['homework', 'theory', 'practice_work']:
+    # create 2 files practice_work_0{i}.py
+    for i in range(2):
+        with open(f"{os.path.join(new_folder_abspath, 'practice_work')}_0{i + 1}.py", "w") as f:
+            f.write("")
+
+    for folder in ['homework', 'theory']:
         folder_full_path = os.path.join(new_folder_abspath, folder)
         os.mkdir(folder_full_path)
 
