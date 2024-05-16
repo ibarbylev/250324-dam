@@ -15,5 +15,5 @@ def process_directory(directory):
             process_directory(file_path)
 
 
-start_directory = '/path/to/start_directory'
+start_directory = os.getcwd()
 process_directory(start_directory)
