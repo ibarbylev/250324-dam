@@ -23,16 +23,18 @@ def create_new_folder():
     new_folder_name = f"lesson_{nnn}__{date_string}"
 
     # create a folder new_folder_name
-    os.makedirs(new_folder_name)
+    os.mkdir(new_folder_name)
+    os.chdir(new_folder_name)
+    new_folder_abspath = os.path.abspath('.')
 
-    # create a "homework" folder in the new_folder_name folder
-    homework_path = os.path.join(new_folder_name, "homework")
-    os.makedirs(homework_path)
+    for folder in ['homework', 'theory', 'practice_work']:
+        folder_full_path = os.path.join(new_folder_abspath, folder)
+        os.mkdir(folder_full_path)
 
-    # create 2 files in the folder "homework"
-    for filename in ["task_01.py", "task_02.py"]:
-        with open(os.path.join(homework_path, filename), "w") as f:
-            f.write("")
+        # create 2 files for each folders
+        for i in range(2):
+            with open(f"{os.path.join(folder_full_path, folder)}_0{i+1}.py", "w") as f:
+                f.write("")
 
     return f"Created new folder: {new_folder_name}"
 
