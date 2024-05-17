@@ -9,3 +9,21 @@
 По умолчанию lang="en".
 Если lang="ru", информацию выводится на русском языке. Для всех остальных вариантов - на английском.
 """
+
+
+def func(age: int, lang="en") -> str:
+    index = 0 if lang == "ru" else 1
+    if age <= 1:
+        return ["Щенок", "Puppy"][index]
+    elif age <= 2 :
+        return ["Юниор", "Junior"][index]
+    elif age <= 7 :
+        return ["Взрослая", "Adult"][index]
+    elif age <= 10:
+        return ["Старшая", "Senior"][index]
+    else:
+        return ["Гериатрическая", "Geriatric"][index]
+
+
+print(func(3))
+print(func(7, lang="ru"))
