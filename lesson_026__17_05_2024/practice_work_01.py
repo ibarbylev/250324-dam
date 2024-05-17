@@ -21,6 +21,6 @@ def count_vowels(word: str) -> int:
     return len([s for s in word if s in vowels])
 
 
-text = 'hEllO world'
-print(count_vowels(text))
-
+if __name__ == "__main__":
+    text = 'hEllO world'
+    print(count_vowels(text))
