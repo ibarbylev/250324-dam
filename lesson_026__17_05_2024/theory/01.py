@@ -1,6 +1,10 @@
+from pprint import pprint
+
+
 def f(lst: list[int]) -> tuple:
     s = sum(lst)
     l = len(lst)
+    pprint(locals())
     return s, l
 
 
@@ -13,3 +17,5 @@ print(f'Len {result[-1]}')
 summa, length = result
 print(f'Sum {summa}')
 print(f'Len {length}')
+
+pprint(locals())
