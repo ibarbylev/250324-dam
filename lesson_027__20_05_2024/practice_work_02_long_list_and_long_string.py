@@ -11,8 +11,8 @@ from random import randint
 print(help(randint))
 
 
-def insert_list_items_into_string(text: str, lst: list[str]) -> None:
-    print()
+def insert_list_items_into_string(text: str, lst: list[str]) -> str:
+    pass
 
 
 text_ex = "В функцию передаются длинная строка и длинный список"
