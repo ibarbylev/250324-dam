@@ -14,5 +14,18 @@
 Список после удаления: [1, 2, 3, 4, 5]
 """
 
-lst = [1, 2, 3, 4, 5]
-print(lst)
+
+a = [1, 2, 3, 4, 5]
+idx = len(a) // 2
+a.insert(idx, 10)
+print(a)
+a.remove(10)
+print(a)
+
+
+a = [1, 2, 3, 4, 5]
+idx = len(a) // 2
+a = a[:idx] + [10] + a[idx:]
+print(a)
+a = a[:idx] + a[idx+1:]
+print(a)

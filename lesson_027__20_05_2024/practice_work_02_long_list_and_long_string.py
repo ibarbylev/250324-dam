@@ -12,7 +12,8 @@ print(help(randint))
 
 
 def insert_list_items_into_string(text: str, lst: list[str]) -> str:
-    pass
+    text_list = list(text)
+    print(text_list)
 
 
 text_ex = "В функцию передаются длинная строка и длинный список"
