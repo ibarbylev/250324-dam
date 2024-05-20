@@ -33,7 +33,7 @@ print(lst.count(5))  # 0
 
 
 """ ============== method clear() ============== """
-print(lst)   # [1, 2, 3, 3]
+print(lst)   # [1, 2, 4, 3]
 lst.clear()
 
 print(lst)   # []
