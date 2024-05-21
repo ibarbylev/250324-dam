@@ -8,7 +8,7 @@
 
 from random import randint
 
-print(help(randint))
+# print(help(randint))
 
 
 def insert_list_items_into_string(text: str, lst: list[str]) -> str:
@@ -16,7 +16,7 @@ def insert_list_items_into_string(text: str, lst: list[str]) -> str:
     for item in lst:
         pos = randint(0, len(text_list))
         text_list.insert(pos, item)
-    print(text_list)
+    return ''.join(text_list)
 
 
 text_ex = "В функцию передаются длинная строка и длинный список"
