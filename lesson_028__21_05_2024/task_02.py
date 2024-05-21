@@ -5,7 +5,7 @@
 
 
 def first_item_equal_last(lst_1: list[int], lst_2: list[int]) -> bool:
-    return ...
+    return lst_1[0] == lst_2[0] and lst_1[-1] == lst_2[-1]
 
 
 print(first_item_equal_last([6], [6]))                      # True

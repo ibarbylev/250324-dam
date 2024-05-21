@@ -7,7 +7,7 @@
 
 
 def is_6_start_or_end(lst: list[int]) -> bool:
-    return ...
+    return lst[0] == 6 and lst[-1] == 6
 
 
 print(is_6_start_or_end([6]))        # True

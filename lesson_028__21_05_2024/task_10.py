@@ -8,7 +8,10 @@
 
 
 def count_uniq_items(nums: list[int]) -> int:
+    # ================ var 1  ===============
+    # return len(set(nums))
 
+    # ================ var 2  ===============
     return 0
 
 

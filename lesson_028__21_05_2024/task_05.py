@@ -2,7 +2,19 @@
 
 
 def count_even_numbers(lst: list[int]) -> int:
-    return ...
+
+    # ===== var 1 =====
+    # count = 0
+    # for num in lst:
+    #     if num % 2 == 0:
+    #         count += 1
+    # return count
+
+    # ===== var 2 =====
+    # return sum(1 for ls in lst if ls % 2 == 0)
+
+    # ===== var 3 =====
+    return len([ls for ls in lst if ls % 2 == 0])
 
 
 print(count_even_numbers([1, 2, 3, 4, 5]))   # 2

@@ -9,7 +9,11 @@
 
 
 def the_first_shall_be_last(lst: list[int]) -> list[int]:
-    pass
+    #  ===== var 1 =====
+    # return lst[1:] + [lst[0]]
+
+    #  ===== var 1 =====
+    return [lst[1], lst[2], lst[0]]
 
 
 print(the_first_shall_be_last([1, 2, 3]))    # [2, 3, 1]

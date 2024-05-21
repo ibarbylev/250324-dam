@@ -9,7 +9,7 @@
 
 
 def return_fist_and_last(lst: list[int]) -> list[int]:
-    return ...
+        return [lst[0], lst[-1]]
 
 
 print(return_fist_and_last([1]))            # [1, 1]

@@ -13,7 +13,10 @@
 
 def sum_before_13(nums: list[int]) -> int:
     amount = 0
-
+    for num in nums:
+        if num == 13:
+            break
+        amount += num
     return amount
 
 
