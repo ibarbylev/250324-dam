@@ -13,6 +13,9 @@ print(help(randint))
 
 def insert_list_items_into_string(text: str, lst: list[str]) -> str:
     text_list = list(text)
+    for item in lst:
+        pos = randint(0, len(text_list))
+        text_list.insert(pos, item)
     print(text_list)
 
 
