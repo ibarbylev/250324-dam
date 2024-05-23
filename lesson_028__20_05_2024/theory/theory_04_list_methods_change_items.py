@@ -17,7 +17,10 @@ print(new_lst)  # [1, 2, 3]
 
 
 """ 3. =============== function map() =============== """
-new_lst = map(str, new_lst)
+print(new_lst)
+print('l c', [float(i) for i in new_lst])
+
+new_lst = map(float, new_lst)
 print(new_lst)   # <map object at 0x7f92476995a0>
 
 new_lst = list(new_lst)
