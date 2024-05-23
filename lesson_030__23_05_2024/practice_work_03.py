@@ -10,7 +10,7 @@
 
 
 def get_positive_numbers(text: str) -> list[int]:
-    return [int(n) for n in text.split() if int(n) > 0]
+    return ...
 
 
 num_str = "-2 5 -8 10 -1 0 7"
