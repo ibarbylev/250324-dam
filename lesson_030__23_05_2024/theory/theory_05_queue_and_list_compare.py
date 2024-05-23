@@ -1,5 +1,5 @@
 from collections import deque
-from theory_02_list_comprehension_timer import timer
+from theory_02_list_comprehension_and_list_compare import timer
 
 
 @timer

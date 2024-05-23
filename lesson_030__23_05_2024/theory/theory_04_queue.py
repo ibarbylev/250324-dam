@@ -1,6 +1,7 @@
 from collections import deque
 
 queue = deque()
+print(queue)
 queue.append(1)
 print(queue)
 queue.append(2)
