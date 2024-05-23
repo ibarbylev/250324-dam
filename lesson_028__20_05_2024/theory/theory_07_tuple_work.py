@@ -12,4 +12,8 @@ print(t[0])   # 1
 
 
 """ ======== change item by index ======== """
-# t[0] = "A"
+
+try:
+    t[0] = "A"
+except Exception as e:
+    print(f"{e.__class__.__name__}: {e}")
