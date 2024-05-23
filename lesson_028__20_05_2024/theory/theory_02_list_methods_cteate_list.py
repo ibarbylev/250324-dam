@@ -6,7 +6,7 @@ lst = [1, 2, 3]
 
 
 """ 2. =============== function list() =============== 
-IMPORTANT: Mast have iterable object!!!
+IMPORTANT: Must have iterable object!!!
 """
 
 try:
