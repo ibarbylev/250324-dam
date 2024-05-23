@@ -5,7 +5,7 @@
 
 
 def length_of_each_word(text: str) -> list[int]:
-    return ...
+    return [len(w) for w in text.split()]
 
 
 t = "Напишите функцию которая принимает строку от пользователя"
