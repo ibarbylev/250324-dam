@@ -10,7 +10,7 @@
 
 
 def get_positive(lst_str: str) -> list[int]:
-    return []
+    return [int(i) for i in lst_str.split() if i.isdigit() and int(i) > 0]
 
 
-print(get_positive("-2 5 -8 10 -1 0 7"))
+print(get_positive("-2 5 -8 10 -1 0 7 a"))
