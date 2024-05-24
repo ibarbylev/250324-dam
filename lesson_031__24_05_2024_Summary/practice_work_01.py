@@ -14,8 +14,16 @@ string
 ['P', 'y', 't', 'h', 'o', 'n', 'w', 'o', 'r', 'd', 's', 's', 't', 'r', 'i', 'n', 'g']
 """
 
+line = ""
+while not line.isdigit():
+    line = input("Введите число строк: ")
 
-
+n = int(line)
+result = []
+for _ in range(n):
+    line = input()
+    result.extend(line)
+print(result)
 
 
 
