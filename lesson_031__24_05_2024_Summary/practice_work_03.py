@@ -9,4 +9,7 @@ text = "Напишите функцию которая принимает стр
 
 
 def count_symbols(text: str) -> list[int]:
-    return []
+    return [len(w) for w in text.split()]
+
+
+print(count_symbols(text))
