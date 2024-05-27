@@ -12,7 +12,7 @@ def func(lst, value):
 
 nums = [1, 2, 3]
 latter = 'a'
-func(nums, latter)
+print(func(nums, latter))
 print('nums =', nums)
 print('latter = ', latter)
 

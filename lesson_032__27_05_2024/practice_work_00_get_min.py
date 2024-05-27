@@ -7,8 +7,8 @@
 """
 
 
-def get_min(args: int) -> int:
-    return ...
+def get_min(*args: int) -> int:
+    return min(args)
 
 
 print(get_min(3, 10, 22, -3, 0))
