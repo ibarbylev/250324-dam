@@ -42,7 +42,7 @@ def get_widths(matrix: list[list[str]]) -> list[int]:
 def get_sort_info_by_2_cols(matrix: list[list[str]], col_1, col_2) -> None:
     """Сортировка матрицы по двум столбцам: col_1 и col_2"""
 
-    matrix.sort(key=lambda x: ...)
+    matrix.sort(key=lambda x: (x[col_1], x[col_2]))
 
     w = get_widths(matrix)
 
@@ -51,5 +51,4 @@ def get_sort_info_by_2_cols(matrix: list[list[str]], col_1, col_2) -> None:
 
 
 students = get_data_from_file('students.txt')
-print(students)
-# get_sort_info_by_2_cols(students, -1, -2)
+get_sort_info_by_2_cols(students, -1, -2)
