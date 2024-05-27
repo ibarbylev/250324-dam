@@ -2,7 +2,7 @@ def outer_function():
     x = 1
 
     def inner_function():
-        # nonlocal x
+        nonlocal x
         x = 2
     inner_function()
     print(x)  # Выводит 2

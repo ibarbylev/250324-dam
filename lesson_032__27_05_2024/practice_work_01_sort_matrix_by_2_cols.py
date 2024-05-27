@@ -21,8 +21,9 @@ students = [
 
 def get_data_from_file(filename: str) -> list[list[str]]:
     students = []
-
-    ...
+    with open("students.txt", "r", encoding="utf-8") as f:
+        for line in f:
+            students.append(line.strip().split(','))
 
     return students
 
@@ -50,4 +51,5 @@ def get_sort_info_by_2_cols(matrix: list[list[str]], col_1, col_2) -> None:
 
 
 students = get_data_from_file('students.txt')
-get_sort_info_by_2_cols(students, -1, -2)
+print(students)
+# get_sort_info_by_2_cols(students, -1, -2)
