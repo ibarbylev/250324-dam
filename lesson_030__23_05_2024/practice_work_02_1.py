@@ -12,6 +12,7 @@ def is_valid_parentheses(sequence: str) -> bool:
         elif s == ")":
             if not stack:
                 return False
+            stack.pop()
 
     return not stack
 
