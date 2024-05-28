@@ -10,7 +10,11 @@
 def transform(text: str) -> str:
     words = text.split()
     new_words = []
-
+    for word in words:
+        if len(word) == 3:
+            new_words.append(word.upper())
+        else:
+            new_words.append(word)
 
     return ' '.join(new_words)
 
