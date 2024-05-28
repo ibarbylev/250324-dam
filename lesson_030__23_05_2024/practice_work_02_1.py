@@ -10,9 +10,8 @@ def is_valid_parentheses(sequence: str) -> bool:
         if s == "(":
             stack.append(s)
         elif s == ")":
-            if not stack:
+            if not (stack and stack.pop() == "("):
                 return False
-            stack.pop()
 
     return not stack
 
