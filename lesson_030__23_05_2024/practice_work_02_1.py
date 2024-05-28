@@ -10,9 +10,8 @@ def is_valid_parentheses(sequence: str) -> bool:
         if s == "(":
             stack.append(s)
         elif s == ")":
-            if stack:
+            if not stack:
                 return False
-
 
     return not stack
 
@@ -20,7 +19,7 @@ def is_valid_parentheses(sequence: str) -> bool:
 # Примеры использования
 print(is_valid_parentheses("()") == True)      # True
 print(is_valid_parentheses("(())") == True)    # True
-print(is_valid_parentheses("(()())") == True)   # True
-print(is_valid_parentheses("(()") == False)     # False
-print(is_valid_parentheses(")(") == False)      # False
-print(is_valid_parentheses("())(") == False)    # False
+print(is_valid_parentheses("(()())") == True)  # True
+print(is_valid_parentheses("(()") == False)    # True
+print(is_valid_parentheses(")(") == False)     # True
+print(is_valid_parentheses("())(") == False)   # True

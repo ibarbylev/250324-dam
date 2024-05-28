@@ -10,10 +10,10 @@ def is_valid_brackets(sequence: str) -> bool:
     return not stack
 
 
-print(is_valid_brackets("()") == True)  # True
-print(is_valid_brackets("([])") == True)  # True
-print(is_valid_brackets("{[()]}") == True)  # True
-print(is_valid_brackets("{[(])}") == False)  # False
-print(is_valid_brackets("{[}") == False)  # False
-print(is_valid_brackets("[({})]") == True)  # True
-print(is_valid_brackets("[({})](]") == False)  # False
+print(is_valid_brackets("()") == True)         # True
+print(is_valid_brackets("([])") == True)       # True
+print(is_valid_brackets("{[()]}") == True)     # True
+print(is_valid_brackets("{[(])}") == False)    # True
+print(is_valid_brackets("{[}") == False)       # True
+print(is_valid_brackets("[({})]") == True)     # True
+print(is_valid_brackets("[({})](]") == False)  # True
