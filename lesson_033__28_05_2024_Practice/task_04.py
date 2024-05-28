@@ -20,7 +20,7 @@
 """
 
 
-def can_sell_icecream(customers):
+def can_sell_icecream(customers: list[int]) -> bool:
     cash_box = []
     customers.sort()
 
@@ -36,11 +36,9 @@ def can_sell_icecream(customers):
         if change_needed > 0:
             return False
 
-        # добавляем купюру customer в кассу cash_box
-        pass
-
-        # сортируем кассу, чтобы крупные банкноты были бы первыми
-        pass
+        # добавляем купюру customer в кассу cash_box и сортируем кассу
+        cash_box.append(customer)
+        cash_box.sort(reverse=True)
 
     return True
 
