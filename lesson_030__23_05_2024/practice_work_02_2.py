@@ -6,6 +6,18 @@
 
 def is_valid_brackets(sequence: str) -> bool:
     stack = []
+    for s in sequence:
+        if s in "({[":
+            stack.append(s)
+        elif s == ")":
+            if not (stack and stack.pop() == "("):
+                return False
+        elif s == "}":
+            if not (stack and stack.pop() == "{"):
+                return False
+        elif s == "]":
+            if not (stack and stack.pop() == "["):
+                return False
 
     return not stack
 
