@@ -5,18 +5,32 @@
 from typing import Callable
 
 
-def transform(text: str, actions: list[tuple[int, Callable[[int], str]]]) -> str:
+def transform(text: str, actions: dict[int: Callable[[int], str]]) -> str:
     words = text.split()
-    new_words = []
 
+    # =================================
+    # new_words = []
+    # for word in words:
+    #     length = len(word)
+    #     new_word = word
+    #
+    #     if length in actions:
+    #         new_word = actions[length](word)
+    #
+    #     new_words.append(new_word)
+    # # =================================
+
+    new_words = [actions[len(w)](w) if len(w) in actions else w for w in words]
 
     return ' '.join(new_words)
 
 
 print(transform(
     text="The fast brown fox jumps over the lazy dog and hides in its hole",
-    actions=[
-        (2, lambda x: '--'),
-    ]
+    actions={
+        2: lambda x: '--',
+        3: lambda x: x.upper(),
+        4: lambda x: '****',
+    }
 ))
 
