@@ -30,13 +30,19 @@ def can_sell_icecream(customers: list[int]) -> bool:
         # необходимо выдать покупателю сдачу из нашей кассы cash_box
         # начиная с самых крупных банкнот
         # если сдачи не хватает - возвращаем False
-        while ...:
-            pass
+        while True:
+            for banknote in cash_box:
+                if banknote <= change_needed:
+                    change_needed -= banknote
+                    cash_box.remove(banknote)
+                    break
+            else:
+                break
 
         if change_needed > 0:
             return False
 
-        # добавляем купюру customer в кассу cash_box и сортируем кассу
+        # добавляем купюру customer в кассу cash_box и сортируем кассу по убыванию
         cash_box.append(customer)
         cash_box.sort(reverse=True)
 
