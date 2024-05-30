@@ -13,5 +13,10 @@ def numbers_squared(lst: list[int]) -> list[int]:
 
 print(numbers_squared([1, 2, 3]))   # [1, 4, 9]
 
+# ============ variant 1 ================
+numbers_squared_lambda = lambda lst: list(map(lambda x: x ** 2, lst))
+print(numbers_squared_lambda([1, 2, 3]))
 
-numbers_squared_lambda = ...
+# ============ variant 2 ================
+numbers_squared_lambda = lambda lst: [x ** 2 for x in lst]
+print(numbers_squared_lambda([1, 2, 3]))

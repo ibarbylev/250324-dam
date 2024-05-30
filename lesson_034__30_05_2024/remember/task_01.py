@@ -7,4 +7,4 @@ def sum_items(*args):
 
 
 lst = [1, 2, 3]
-sum_items(...)   # 1+2+3=6
+sum_items(*lst)   # 1+2+3=6
