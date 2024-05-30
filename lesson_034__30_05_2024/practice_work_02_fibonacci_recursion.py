@@ -7,10 +7,14 @@ https://ru.wikipedia.org/wiki/%D0%A7%D0%B8%D1%81%D0%BB%D0%B0_%D0%A4%D0%B8%D0%B1%
 from functools import lru_cache
 
 
-# @lru_cache
+@lru_cache
 def fibonacci(n):
-    pass
+    print(n, end=' ')
+    if n <= 1:
+        return n
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
 
 
-for i in range(7):
+for i in range(10):
     print(fibonacci(i))
