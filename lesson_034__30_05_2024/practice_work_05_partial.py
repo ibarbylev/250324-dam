@@ -16,7 +16,7 @@ int("101010", base=2): 42
 
 from functools import partial
 
-binary_to_decimal = ...
+binary_to_decimal = partial(int, base=2)
 
 
 print(binary_to_decimal("101010"))
