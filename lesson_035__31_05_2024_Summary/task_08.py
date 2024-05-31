@@ -8,7 +8,10 @@
 
 # ============== tail recursion =================
 def sum_digits_tail(num, accumulator=0):
-    pass
+    if num < 1:
+        return accumulator
+    else:
+        return sum_digits_tail(num // 10, num % 10 + accumulator)
 
 
 print(sum_digits_tail(246))  # 12
@@ -16,7 +19,10 @@ print(sum_digits_tail(246))  # 12
 
 # ============== non tail recursion =================
 def sum_digits_non_tail(num):
-    pass
+    if num < 10:
+        return 0
+    else:
+        return num % 10 + sum_digits_tail(num // 10)
 
 
 print(sum_digits_non_tail(246))  # 12
