@@ -6,9 +6,8 @@
 """
 
 
-def sum_of_even():
-
-    return ...
+def sum_of_even(*args):
+    return sum(num for num in args if num % 2 == 0)
 
 
 print(sum_of_even(1, 4, 5, 10))  # 14
