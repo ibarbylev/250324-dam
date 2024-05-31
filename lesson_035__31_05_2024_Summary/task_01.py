@@ -14,7 +14,7 @@ print(value)  # 2
 
 
 def raising_to_power(nums: list[int], power: int) -> list[int]:
-    return ...
+    return [num ** power for num in nums]
 
 
 nums = [1, 2, 3]
