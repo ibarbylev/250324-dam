@@ -1,4 +1,4 @@
-"""Универсальная функция get_area() рассчитывает прямоугольника или прямоугольного треугольника:
+"""Универсальная функция get_area() рассчитывает площадь прямоугольника или прямоугольного треугольника:
     def get_area(side1, side2, is_triangle=False):
         if is_triangle:
             return side1 * side2 * 0.5
@@ -6,8 +6,8 @@
 
 
 Необходимо создать на её основе функции, которые вычисляют площадь только одной фигуры:
-    area_rectangle(side1, side2)
-    area_right_triangle(side1, side2)
+    rectangle_area(side1, side2)
+    right_triangle_area(side1, side2)
 
 При решении необходимо использовать functools.partial
 """
@@ -21,9 +21,9 @@ def get_area(side1, side2, is_triangle=False):
     return side1 * side2
 
 
-area_rectangle = partial(get_area)
-area_right_triangle = partial(get_area, is_triangle=True)
+rectangle_area = partial(get_area)
+right_triangle_area = partial(get_area, is_triangle=True)
 
 
-print(area_rectangle(2, 4))  # 8
-print(area_right_triangle(2, 3))  # 3.0
+print(rectangle_area(2, 4))  # 8
+print(right_triangle_area(2, 3))  # 3.0
