@@ -22,11 +22,11 @@ def get_area(side1, side2, is_triangle=False):
     return side1 * side2
 
 
-area_square = ...
-area_rectangle = ...
-area_right_triangle = ...
+area_square = partial(get_area, side2=1)
+# area_rectangle = ...
+# area_right_triangle = ...
 
 
 print(area_square(3))  # 9
-print(area_rectangle(2, 4))  # 8
-print(area_right_triangle(2, 3))  # 3.0
+# print(area_rectangle(2, 4))  # 8
+# print(area_right_triangle(2, 3))  # 3.0
