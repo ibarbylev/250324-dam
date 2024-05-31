@@ -5,4 +5,4 @@ def add_2(x):
     return x + 2
 
 
-add_2_lambda = ...
+add_2_lambda = lambda x: x + 2

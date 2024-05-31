@@ -6,6 +6,7 @@ def outer_function():
     x = 1
 
     def inner_function():
+        nonlocal x
         x += 2
     inner_function()
     print(x)  # 3
