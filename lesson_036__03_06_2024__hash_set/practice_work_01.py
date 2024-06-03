@@ -10,20 +10,12 @@
 
 
 def has_zero_sum_pair_1(items):  # O(n^2)
-    n = len(items)
-    for i in range(n):    # O(n)
-        for j in range(i + 1, n):   # O(n)
-            if items[i] + items[j] == 0:
-                return True
+    pass
     return False
 
 
 def has_zero_sum_pair_2(items):
-    my_set = set()
-    for item in items:   # O(n)
-        if -item in my_set:   # O(1)
-            return True
-        my_set.add(item)
+    pass
     return False
 
 
