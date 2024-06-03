@@ -18,9 +18,9 @@ def get_area(side1, side2, is_triangle=False):
     return side1 * side2
 
 
-square_area = ...
-rectangle_area = ...
-right_triangle_area = ...
+square_area = partial(get_area, side2=None)
+rectangle_area = partial(get_area)
+right_triangle_area = partial(get_area, is_triangle=True)
 
 
 print(square_area(3))  # 9
