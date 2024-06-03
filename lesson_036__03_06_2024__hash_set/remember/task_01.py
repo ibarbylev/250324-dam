@@ -10,7 +10,7 @@
 from functools import partial
 
 
-def get_area(side1, side2=None, is_triangle=False):
+def get_area(side1, side2, is_triangle=False):
     if side2 is None:
         side2 = side1
     if is_triangle:
