@@ -10,7 +10,12 @@
 
 
 def is_palindrome(word):
-    pass
+    if len(word) <= 1:
+        return 'Yes'
+    elif word[0] != word[-1]:
+        return 'No'
+    else:
+        return is_palindrome(word[1:-1])
 
 
 print(is_palindrome("radar"))  # Yes
