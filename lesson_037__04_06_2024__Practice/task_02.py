@@ -17,10 +17,15 @@
 
 
 def power_of_2(n):
-    pass
+    if n == 1:
+        return "YES"
+    elif n % 2 != 0 or n == 0:
+        return "NO"
+    else:
+        return power_of_2(n // 2)
 
 
-power_of_2(8)  # YES
-power_of_2(1)  # YES
-power_of_2(3)  # NO
+print(power_of_2(8))  # YES
+print(power_of_2(1))  # YES
+print(power_of_2(3))  # NO
 
