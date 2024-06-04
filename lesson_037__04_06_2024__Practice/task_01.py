@@ -6,14 +6,20 @@
 
 
 def tail_recursion(n, current=1):
-    pass
+    if n < current:
+        return
+    print(current)
+    tail_recursion(n, current + 1)
 
 
 tail_recursion(5)
 
 
 def non_tail_recursion(n):
-    pass
+    if n == 0:
+        return n
+    non_tail_recursion(n - 1)
+    print(n)
 
 
 non_tail_recursion(5)
