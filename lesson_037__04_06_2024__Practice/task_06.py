@@ -12,7 +12,7 @@ is_anagram(“кластер”, “стрелка”, “сталкер”) = T
 
 
 def is_anagram(word1, word2, word3):
-    return ...
+    return set(word1) == set(word2) == set(word3)
 
 
 print(is_anagram("кластер", "стрелка", "сталкер"))   # True
