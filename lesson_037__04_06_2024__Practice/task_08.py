@@ -15,8 +15,11 @@ def set_gen(nums: list[int]) -> set[int]:
     for num in nums:
         new_num = num
 
-        pass
+        # блок проверки дубликатов и изменения new_num
+        while new_num in sset:
+            new_num = int(str(new_num) + str(num))
 
+        sset.add(new_num)
     return sset
 
 
