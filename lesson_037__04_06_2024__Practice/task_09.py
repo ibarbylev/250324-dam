@@ -10,7 +10,13 @@
 
 
 def match_percentage(interests_1: str, interests_2: str) -> float:
-    pass
+    interests1 = set(interests_1.split(", "))
+    interests2 = set(interests_2.split(", "))
+
+    common_interests = interests1 & interests2
+    max_interests = max(len(interests1), len(interests2))
+
+    return (len(common_interests) / max_interests) * 100
 
 
 user1_interests = "путешествия, фотография, кино, музыка"

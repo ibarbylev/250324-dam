@@ -17,11 +17,7 @@
 
 
 def power_of_2(n):
-    if n == 1:
-        print('YES')
-    elif n % 2 != 0 and n > 1:
-        print('NO')
-    power_of_2(n )
+    pass
 
 
 power_of_2(8)  # YES

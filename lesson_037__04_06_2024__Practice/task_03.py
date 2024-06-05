@@ -6,14 +6,19 @@
 
 
 def digits_sum_non_tail(n):
-    pass
+    if n < 10:
+        return n
+    else:
+        return n % 10 + digits_sum_non_tail(n // 10)
 
 
 print(digits_sum_non_tail(179))  # 17
 
 
 def digits_sum_tail(n, accumulator=0):
-    pass
+    if n < 1:
+        return accumulator
+    return digits_sum_tail(n // 10, n % 10 + accumulator)
 
 
 print(digits_sum_tail(179))  # 17

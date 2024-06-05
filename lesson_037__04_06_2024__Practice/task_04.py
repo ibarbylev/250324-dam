@@ -14,7 +14,8 @@ def is_palindrome(word):
         return 'Yes'
     elif word[0] != word[-1]:
         return 'No'
-    return is_palindrome(word[1:-1])
+    else:
+        return is_palindrome(word[1:-1])
 
 
 print(is_palindrome("radar"))  # Yes
