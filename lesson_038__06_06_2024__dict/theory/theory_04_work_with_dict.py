@@ -25,8 +25,10 @@ print(address)    # None
 """ 4. ================== change value =================== """
 my_dict['age'] = 35
 print(my_dict)
+# {'name': 'John', 'age': 35, 'city': 'New York'}
+my_dict['height'] = 182
+print(my_dict)
 # {'name': 'John', 'age': 35, 'city': 'New York', 'height': 182}
-
 
 """ 5. ================== add new item =================== """
 my_dict['weight'] = 82
@@ -41,7 +43,7 @@ print(my_dict)
 
 
 """ 7. ================== pop(key) =================== """
-my_dict.pop('height')
+print(my_dict.pop('height'))
 print(my_dict)
 # {'name': 'John', 'age': 35, 'city': 'New York'}
 

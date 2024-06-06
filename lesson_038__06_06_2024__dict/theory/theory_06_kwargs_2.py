@@ -4,8 +4,10 @@ def my_function(*args, **kwargs):
 
     print(kwargs.items())
 
-    for key, value in kwargs.items():
-        print(key, value)  # Выводит имена аргументов и их значения
+    for key, _ in kwargs.items():
+        kwargs[key] = key
+
+    print(kwargs)
 
 
 my_function(name="John", age=25, height=182)

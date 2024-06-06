@@ -43,9 +43,11 @@ print(""" 3. ================== dict comprehension =================== """)
 dict_comp = {k: v for k, v in enumerate(range(5))}
 print(dict_comp)    # {0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
 
+dict_comp_2 = {k: k for k in range(5)}
+print('dict_comp_2', dict_comp_2)
 
 print(""" 4. ================== dict.fromkeys() =================== """)
 
-print(dict.fromkeys([1, 2, 3]))   # {1: None, 2: None, 3: None}
+print(dict.fromkeys([1, 2, 2, 3]))   # {1: None, 2: None, 3: None}
 print(dict.fromkeys([1, 2, 3], 0))   # {1: 0, 2: 0, 3: 0}
 print(dict.fromkeys([1, 2, 3], []))  # {1: [], 2: [], 3: []}

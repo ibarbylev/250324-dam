@@ -45,3 +45,6 @@ print("""
 """)
 new_dict = {1: 1} | {2: 2}
 print(new_dict)
+
+new_dict = {1: 1, 2: 5} | {2: 2}
+print(new_dict)
