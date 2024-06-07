@@ -6,7 +6,13 @@
 my_set = {1, 2, 3, 4, 5, 6}
 
 # =========== variant 1 ===============
-
+for item in my_set:
+    print(item)
 
 # =========== variant 2 ===============
+print(*my_set, sep='\n')
 
+
+# =========== variant 3 ===============
+while my_set:
+    print(my_set.pop())
