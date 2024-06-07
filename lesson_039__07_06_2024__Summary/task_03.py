@@ -23,8 +23,14 @@ def get_statistics(text):
     for word in words:
         dct = {'consonants': 0, 'vowels': 0}
 
-        pass
+        for char in word:
+            if char.isalpha():
+                if char in vowels:
+                    dct['vowels'] += 1
+                else:
+                    dct['consonants'] += 1
 
+        result[word] = dct
     return result
 
 
