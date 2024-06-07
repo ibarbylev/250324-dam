@@ -19,14 +19,17 @@ except Exception as e:
     print(f"ERROR!!! {e.__class__.__name__}: {e}")    # TypeError: unhashable type: 'list'
 
 
-print(""" 2. ================== function dict() =================== """)
+print(""" 2. ================== function dict() =================== 
+    1. iterable + pair(key, value)
+    2. hashable key
+""")
 empty_dict_1 = {}
 print(empty_dict_1)   # {}
 
 empty_dict_2 = dict()
 print(empty_dict_2)   # {}
 
-two_dimensional_array = [("name", ["John"]), ("age", 15), ("age", 25), ("city", "New York")]
+two_dimensional_array = [("name", ["John"]), ("name", ["John2"]), ("age", 15), ("age", 25), ("city", "New York")]
 print(two_dimensional_array)
 dict_3 = dict(two_dimensional_array)
 print(dict_3)       # {'name': 'John', 'age': 25, 'city': 'New York'}

@@ -7,8 +7,13 @@
 from pprint import pprint
 
 
-def create_user_profile():
-    pass
+def create_user_profile(first_name, last_name, **kwargs):
+    profile = {
+        'first_name': first_name,
+        'last_name': last_name
+    }
+    profile.update(kwargs)
+    return profile
 
 
 pprint(create_user_profile(

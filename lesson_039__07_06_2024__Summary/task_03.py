@@ -21,6 +21,7 @@ def get_statistics(text):
     words = text.split()
 
     for word in words:
+        dct = {'consonants': 0, 'vowels': 0}
 
         pass
 
