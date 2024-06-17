@@ -14,10 +14,11 @@ def get_alphabet_statistics(text: str) -> dict[str, int]:
     text = text.lower()
     for char in text:
         if char.isalpha():
-            if char in dct:
-                dct[char] += 1
-            else:
-                dct[char] = 1
+            # if char in dct:
+            #     dct[char] = dct[char] + 1
+            # else:
+            #     dct[char] = 1
+            dct[char] = dct.get(char, 0) + 1
 
     return dct
 
