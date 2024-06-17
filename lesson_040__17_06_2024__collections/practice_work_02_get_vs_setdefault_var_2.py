@@ -15,7 +15,8 @@ def get_statistics_by_words(text):
     for char in text:
         if char.isalpha():
             # dct[char] = dct.get(char, 0) + 1
-
+            dct.setdefault(char, []).append(1)
+            # dct[char] = dct.setdefault(char, 0) + 1
     return dct
 
 
