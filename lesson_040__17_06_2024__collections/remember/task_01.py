@@ -9,7 +9,14 @@ set_uniq_words = {"cat", "dog", "animals"}
 
 
 def add_uniq_info(text: str, set_uniq_words: set[str]) -> set[str]:
-    pass
+    words = text.split()
+    # ---- variant 1 ----
+    # for word in words:
+    #     set_uniq_words.add(word)
+
+    # ---- variant 2 ----
+    set_uniq_words.update(words)
+    return set_uniq_words
 
 
 text = "my dog is my best friend"
