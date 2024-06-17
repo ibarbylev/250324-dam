@@ -10,7 +10,13 @@ text = 'Bernard Shaw: "Life isn\'t about finding yourself. Life is about creatin
 
 
 def get_statistics_by_words(text):
-    pass
+    dct = {}
+    text = text.lower()
+    for char in text:
+        if char.isalpha():
+            # dct[char] = dct.get(char, 0) + 1
+
+    return dct
 
 
 pprint(get_statistics_by_words(text))
