@@ -10,7 +10,16 @@ text = 'Winston Churchill: "Those who never change their minds never change anyt
 
 
 def get_alphabet_statistics(text: str) -> dict[str, int]:
-    pass
+    dct = {}
+    text = text.lower()
+    for char in text:
+        if char.isalpha():
+            if char in dct:
+                dct[char] += 1
+            else:
+                dct[char] = 1
+
+    return dct
 
 
 pprint(get_alphabet_statistics(text))
