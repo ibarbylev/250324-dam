@@ -1,8 +1,7 @@
 """Необходимо создать функцию get_alphabet_statistics, которая
  - принимает текст;
- - и возвращает словарь в формате: <буква: её количество в этом тексте>
+ - и возвращает словарь в формате: <символ: его количество в этом тексте>
 
-Перед обработкой текста его необходимо перевести в нижний регистр.
 
 Задачу необходимо выполнить с помощью collections.Counter
 """
@@ -14,7 +13,7 @@ text = ('Mark Twain: "If you don\'t read the newspaper, you\'re uninformed. '
 
 
 def get_alphabet_statistics(text: str) -> dict[str, int]:
-    pass
+    return Counter(text)
 
 
 pprint(get_alphabet_statistics(text))

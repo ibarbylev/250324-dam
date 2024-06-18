@@ -13,4 +13,5 @@ print(json_str)  # Выводит '{"name": "John", "age": 25, "city": "New York
 # Десериализация JSON-строки в Python-объект
 json_str: str = '{"name": "John", "age": 25, "city": "New York"}'
 data: dict = json.loads(json_str)
+print(data)   # {'name': 'John', 'age': 25, 'city': 'New York'}
 print(data["name"])  # Выводит 'John'
