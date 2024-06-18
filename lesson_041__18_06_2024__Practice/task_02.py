@@ -14,12 +14,12 @@ which_country("Mumbai") = Not found
 
 """
 import json
+from pprint import pprint
 
 
 def read_json_file(filename: str) -> dict[str, str]:
-    pass
-    dct = json.load(file)
-    return dct
+    with open(filename, encoding='utf-8') as file:
+        return json.load(file)
 
 
 def which_country(city: str) -> str:
@@ -27,6 +27,7 @@ def which_country(city: str) -> str:
     return "Not found"
 
 
+pprint(read_json_file('cities-countries.json'))
 print(which_country("Novgorod"))   # Russia
 print(which_country("Turin"))      # Italy
 print(which_country("Mumbai"))     # Not found
