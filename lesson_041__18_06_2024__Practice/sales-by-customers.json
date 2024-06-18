@@ -1,0 +1,14 @@
+{
+    "Alice": {
+        "apple": 5,
+        "orange": 3,
+        "banana": 2
+    },
+    "Bob": {
+        "apple": 2,
+        "banana": 7
+    },
+    "Charlie": {
+        "apple": 1
+    }
+}

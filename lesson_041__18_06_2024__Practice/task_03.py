@@ -39,13 +39,7 @@ def process_sales_data(filename: str) -> dict[str, dict[str, int]]:
     initial_data = read_list_from_json_file(filename)
     sales = {}
 
-    for line in initial_data:
-        customer, item, quantity = line.split('-')
-        quantity = int(quantity)
-
-        customer_dict = sales.setdefault(customer, {})
-
-        sales[customer][item] = customer_dict.get(item, 0) + quantity
+    pass
 
     return sales
 
