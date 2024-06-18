@@ -27,15 +27,16 @@
 """
 import json
 from pprint import pprint
+from typing import Dict
 
 
-def read_list_from_json_file(filename: str) -> dict[str, str]:
+def read_list_from_json_file(filename: str) -> Dict[str, str]:
     with open(filename, encoding='utf-8') as file:
         lst = json.load(file)
     return lst
 
 
-def process_sales_data(filename: str) -> dict[str, dict[str, int]]:
+def process_sales_data(filename: str) -> Dict[str, Dict[str, int]]:
     initial_data = read_list_from_json_file(filename)
     sales = {}
 
