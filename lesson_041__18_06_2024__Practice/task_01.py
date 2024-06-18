@@ -13,9 +13,16 @@
 synonyms = {"Hello": "Hi", "Bye": "Goodbye", "List": "Array"}
 
 
-def get_synonym(synonyms: dict, word: str) -> str:
+def get_synonym(synonyms: dict[str, str], word: str) -> str:
+    if word in synonyms.keys():
+        return synonyms[word]
+    elif word in synonyms.values():
+        # for key, value in synonyms.items():
+        #     if value == word:
+        #         return key
+        return [k for k, v in synonyms.items() if v == word][0]
 
-    return "THe word <Plate> not found in the dictionary!"
+    return f"THe word <{word}> not found in the dictionary!"
 
 
 print(get_synonym(synonyms, "Goodbye"))  # Bye
