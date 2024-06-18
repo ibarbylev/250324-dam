@@ -23,7 +23,18 @@ def read_json_file(filename: str) -> dict[str, str]:
 
 
 def which_country(city: str) -> str:
-    pass
+    dct = read_json_file('cities-countries.json')
+
+    if city in dct.values():
+        # ----- variant 1 ----
+        for key, value in dct.items():
+            if city in value:
+                return key
+
+        # ----- variant 2 ----
+        # return [k for k, v in synonyms.items() if v == city][0]
+
+
     return "Not found"
 
 
