@@ -15,9 +15,10 @@ which_country("Mumbai") = Not found
 """
 import json
 from pprint import pprint
+from typing import Dict
 
 
-def read_json_file(filename: str) -> dict[str, str]:
+def read_json_file(filename: str) -> Dict[str, str]:
     with open(filename, encoding='utf-8') as file:
         return json.load(file)
 
@@ -25,20 +26,19 @@ def read_json_file(filename: str) -> dict[str, str]:
 def which_country(city: str) -> str:
     dct = read_json_file('cities-countries.json')
 
-    if city in dct.values():
+    if [item for item in dct.values() if city in item]:
         # ----- variant 1 ----
-        for key, value in dct.items():
-            if city in value:
-                return key
+        # for key, value in dct.items():
+        #     if city in value:
+        #         return key
 
         # ----- variant 2 ----
-        # return [k for k, v in synonyms.items() if v == city][0]
-
+        return [k for k, v in dct.items() if city in v][0]
 
     return "Not found"
 
 
-pprint(read_json_file('cities-countries.json'))
+# pprint(read_json_file('cities-countries.json'))
 print(which_country("Novgorod"))   # Russia
 print(which_country("Turin"))      # Italy
 print(which_country("Mumbai"))     # Not found
