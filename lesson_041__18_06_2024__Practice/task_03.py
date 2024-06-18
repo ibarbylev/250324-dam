@@ -34,18 +34,30 @@ from typing import Dict, List
 
 def read_list_from_json_file(filename: str) -> List[str]:
     with open(filename, encoding='utf-8') as file:
-        lst = json.load(file)
-    return lst
+        return json.load(file)
 
 
 def process_sales_data(filename: str) -> Dict[str, Dict[str, int]]:
+    # initial_data: List = [
+    #     "Alice-apple-5",
+    #     "Alice-orange-3",
+    #     "Bob-apple-2",
+    #     "Bob-banana-7",
+    #     "Alice-banana-2",
+    #     "Charlie-apple-1"
+    # ]
+
     initial_data: List = read_list_from_json_file(filename)
     sales = {}
 
-    pass
-
+    for line in initial_data:
+        customer, product, quantity = line.split('-')
+        quantity = int(quantity)
+        customer_dict = sales.setdefault(customer, {})   # {'apple': 2, 'banana': 7}
+        sales[customer][product] = customer_dict.get(product, 0) + quantity
     return sales
 
 
+# print(read_list_from_json_file('sales.json'))
 sales_dict = process_sales_data('sales.json')
 pprint(sales_dict)
