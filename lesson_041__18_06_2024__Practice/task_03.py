@@ -21,23 +21,25 @@
 ]
 
 Пример вывода:
-    {'Alice': {'apple': 5, 'banana': 2, 'orange': 3},
-     'Bob': {'apple': 2, 'banana': 7},
-     'Charlie': {'apple': 1}}
+    {
+        'Alice': {'apple': 5, 'banana': 2, 'orange': 3},
+        'Bob': {'apple': 2, 'banana': 7},
+        'Charlie': {'apple': 1}
+    }
 """
 import json
 from pprint import pprint
-from typing import Dict
+from typing import Dict, List
 
 
-def read_list_from_json_file(filename: str) -> Dict[str, str]:
+def read_list_from_json_file(filename: str) -> List[str]:
     with open(filename, encoding='utf-8') as file:
         lst = json.load(file)
     return lst
 
 
 def process_sales_data(filename: str) -> Dict[str, Dict[str, int]]:
-    initial_data = read_list_from_json_file(filename)
+    initial_data: List = read_list_from_json_file(filename)
     sales = {}
 
     pass
