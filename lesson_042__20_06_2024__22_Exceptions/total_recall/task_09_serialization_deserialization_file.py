@@ -1,18 +1,21 @@
 """Выполнить сериализацию / десериализацию объекта:
-person = {"name": "John", "age": 25}
+person = {"name": "Евгений", "age": 25}
 
 Убедиться в том, словари до преобразования идентичен словарю после.
 """
 
-from json import dumps, loads
+from json import dump, load
 
-person_source = {"name": "John", "age": 25}
+person_source = {"name": "Евгений", "age": 25}
 print(type(person_source))  # dict
 
-person_source_str = dumps(person_source)
-print(type(person_source_str))  # str
+# Записываем словарь в файл
+with open('data.json', 'w', encoding='utf-8') as file:
+    dump(person_source, file, ensure_ascii=False, indent=4)
 
-person_destination = loads(person_source_str)
-print(type(person_destination))  # dict
 
+with open('data.json', encoding='utf-8') as file:
+    person_destination = load(file)
+
+print(person_destination)
 print(person_source == person_destination)
