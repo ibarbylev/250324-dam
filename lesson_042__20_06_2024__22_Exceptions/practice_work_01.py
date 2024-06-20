@@ -26,13 +26,21 @@ try:
     with open('names.txt', encoding='utf-8') as file:
         for line in file:
             if len(line.split()) != 5:
-                pass
-                # IncorrectAmountOfData('Число элементов в стоке на равно 5!')
+                raise IncorrectAmountOfData('Число элементов в стоке на равно 5!')
             else:
                 surname, name, birth_year, course, points = line.split()
                 # искусственно вызываем возможную ошибку
                 _, _, _ = int(birth_year), int(course), int(points)
                 print(line)
+
+except FileNotFoundError as e:
+    print(f'{e.__class__.__name__} {e}')
+
+except (IOError, OSError, UnicodeDecodeError) as e:
+    print(f'{e.__class__.__name__} {e}')
+
+except IncorrectAmountOfData as e:
+    print(f'{e.__class__.__name__} {e}')
 
 
 except Exception as e:
