@@ -14,7 +14,7 @@ from collections import Counter
 
 
 def get_statistics(text: str) -> dict:
-    return ...
+    return dict(Counter(text))
 
 
 txt = "Python is the best!"

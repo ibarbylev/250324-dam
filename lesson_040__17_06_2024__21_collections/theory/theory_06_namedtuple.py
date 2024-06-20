@@ -10,3 +10,9 @@ print(person1.age)
 person2 = Person('Ivan', 31)
 print(person2.name)
 print(person2.age)
+
+
+# Alice
+# 30
+# Ivan
+# 31

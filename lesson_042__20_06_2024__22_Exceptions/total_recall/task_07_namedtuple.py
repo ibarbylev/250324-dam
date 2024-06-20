@@ -14,7 +14,8 @@ country3 = Country(name='Italy', capital='Rome', population=59500000)
 countries = [country1, country2, country3]
 
 
-pass
+for c in countries:
+    print(f"Country: {c.name}, Capital: {c.capital}, Population: {int(c.population/1000000)} mln")
 
 # Country: France, Capital: Paris, Population: 67 mln
 # Country: Germany, Capital: Berlin, Population: 83 mln
