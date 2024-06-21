@@ -18,5 +18,6 @@ print(ord_dict)   # OrderedDict({'orange': 2, 'apple': 5, 'banana': 2})
 
 new_ord_dict = OrderedDict(
     # Здесь отсутствует одна строка кода:
+    sorted(ord_dict.items(), key=lambda x: (-x[1], x[0]))
 )
 print(new_ord_dict)   # OrderedDict({'apple': 5, 'banana': 2, 'orange': 2})
