@@ -19,4 +19,13 @@ my_dict = {
     "grape": 7
 }
 
-
+while True:
+    key = input("Введите ключ: ")
+    if key in my_dict:
+        print(f"{key}: {my_dict[key]}")
+    else:
+        print(f"Ключ '{key}' отсутствует в словаре.")
+        print("Вот несколько вариантов для справки:")
+        sample_keys = list(my_dict.keys())[:5]
+        print(", ".join(sample_keys))
+        print("Попробуйте еще раз.")
