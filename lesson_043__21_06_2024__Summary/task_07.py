@@ -8,7 +8,13 @@
 
 
 def plus_two(number: int | float) -> int | float:
-    pass
+    if isinstance(number, str):
+        raise TypeError("Ошибка! Строка вместо числа!")
+    if isinstance(number, list):
+        raise TypeError("Ошибка! Список вместо числа!")
+    if isinstance(number, set):
+        raise TypeError("Ошибка! Множество вместо числа!")
+    return 2 * number
 
 
 try:
