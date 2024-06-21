@@ -9,8 +9,9 @@ TypeError: Ожидаемый тип данных — число!
 
 
 def plus_two(number: int | float) -> int | float:
-    pass
-
+    if not isinstance(number, (int, float)):
+        raise TypeError("Ожидаемый тип данных — число!")
+    return 2 * number
 
 try:
     plus_two("5")
