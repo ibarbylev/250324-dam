@@ -18,4 +18,5 @@ my_dict = {
 
 key, value = input("Введите ключ: "), input("Введите значение: ")
 # Здесь отсутствует одна строка кода:
+my_dict.setdefault(key, []).append(value)
 pprint(my_dict)
