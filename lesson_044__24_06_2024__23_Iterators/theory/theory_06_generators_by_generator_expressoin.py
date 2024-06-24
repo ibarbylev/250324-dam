@@ -20,6 +20,6 @@ try:
     print(g.__next__())
 
 except StopIteration as e:
-    print(e)  # Exit from generator
+    print(e)
 else:
     print("Прерывание по StopIteration не произошло!")
