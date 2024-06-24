@@ -1,5 +1,6 @@
 # декларация генератора
 def gen():
+    print('---------')
     yield 1
     print('---------')
     yield 2
@@ -18,7 +19,7 @@ try:
     print(g.__next__())
     print(g.__next__())
 except StopIteration as e:
-    print(e)
+    print(f"{e.__class__.__name__}: {e}")
 
 
 """Почему сразу нельзя сделать: print(gen().__next__()) ?
