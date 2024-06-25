@@ -39,18 +39,18 @@ users = [
     ('Robert', 'Davis', '1992-04-12', 'DE1234567890123456789012')  # Длина IBAN не равна 22 символам
 ]
 
-# {'Anna_Johnson': ['IBANException: The first two characters must be letters!'],
-#  'Emily_Taylor': ['IBANException: The last twenty characters must be digits!'],
-#  'John_Smith': ["AgeException: The client's age cannot be less than 18 years!",
-#                 'IBANException: Incorrect Length of IBAN!'],
-#  'Michael_Brown': [],
-#  'Robert_Davis': ['IBANException: Incorrect Length of IBAN!'],
-#  '_Doe': ['AgeException: Empty name or/and surname'],
-#  '_Taylor': ['AgeException: Empty name or/and surname',
+# {'-Doe': ['NameException: Empty name or/and surname'],
+#  '-Taylor': ['NameException: Empty name or/and surname',
 #              "AgeException: The client's age cannot be less than 18 years!",
 #              'IBANException: Incorrect Length of IBAN!; The first two '
 #              'characters must be letters!; The last twenty characters must be '
-#              'digits!']}
+#              'digits!'],
+#  'Anna-Johnson': ['IBANException: The first two characters must be letters!'],
+#  'Emily-Taylor': ['IBANException: The last twenty characters must be digits!'],
+#  'John-Smith': ["AgeException: The client's age cannot be less than 18 years!",
+#                 'IBANException: Incorrect Length of IBAN!'],
+#  'Michael-Brown': [],
+#  'Robert-Davis': ['IBANException: Incorrect Length of IBAN!']}
 
 
 class NameException(Exception):
@@ -116,11 +116,10 @@ def validate_customers(list_tuples: list[tuple[str, ...]]) -> dict[str, list[str
         except AgeException as e:
             errors.append(f'{e.__class__.__name__}: {e}')
 
-        pass
-
-
-
-
+        try:
+            iban_validation(iban)
+        except IBANException as e:
+            errors.append(f'{e.__class__.__name__}: {e}')
 
         key = f'{name}-{surname}'
         result[key] = errors
