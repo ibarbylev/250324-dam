@@ -12,9 +12,13 @@ def letters_gen():
     print('---------')
 
 
+g = letters_gen()
+
+
 def combined_gen():
     yield from numbers_gen()
-    yield from letters_gen()
+    # yield from letters_gen()
+    yield from g
     yield from [10, 20, 30]
 
 
