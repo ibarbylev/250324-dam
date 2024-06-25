@@ -23,7 +23,6 @@ PS
 from task_01 import users
 
 
-
 class IBANException(Exception):
     pass
 
@@ -52,7 +51,6 @@ for user in users:
 
     except Exception as e:
         print(f'{e.__class__.__name__}: {e}')
-
 
 # True
 # IBANException: Incorrect Length of IBAN!

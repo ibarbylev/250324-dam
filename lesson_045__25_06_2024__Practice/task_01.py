@@ -83,8 +83,21 @@ def age_validation(birth_date: str) -> bool:
 
 
 def iban_validation(iban: str) -> bool:
-    pass
-    # IBANException(error)
+    mistakes = []
+    iban_corr = iban.replace(" ", "")
+
+    if len(iban_corr) != 22:
+        mistakes.append("Incorrect Length of IBAN!")
+
+    if not iban_corr[:2].isalpha():
+        mistakes.append("The first two characters must be letters!")
+
+    if not iban_corr[2:].isdigit():
+        mistakes.append("The last twenty characters must be digits!")
+
+    if mistakes:
+        raise IBANException("; ".join(mistakes))
+    return True
 
 
 def validate_customers(list_tuples: list[tuple[str, ...]]) -> dict[str, list[str]]:
