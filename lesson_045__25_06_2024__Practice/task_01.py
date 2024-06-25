@@ -66,8 +66,9 @@ class IBANException(Exception):
 
 
 def name_validation(name, surname) -> bool:
-    pass
-    # NameException('Empty name or/and surname')
+    if not name or not surname:
+        raise NameException('Empty name or/and surname')
+    return True
 
 
 def age_validation(birth_date: str) -> bool:
@@ -81,12 +82,29 @@ def age_validation(birth_date: str) -> bool:
 
 def iban_validation(iban: str) -> bool:
     pass
+    # IBANException(error)
 
 
 def validate_customers(list_tuples: list[tuple[str, ...]]) -> dict[str, list[str]]:
     result = {}
+    for client in list_tuples:
+        (name, surname, birth_date, iban) = client
+        errors = []
 
-    pass
+        try:
+            name_validation(name, surname)
+        except NameException as e:
+            errors.append(f'{e.__class__.__name__}: {e}')
+
+
+        pass
+
+
+
+
+
+        key = f'{name}-{surname}'
+        result[key] = errors
 
     return result
 
