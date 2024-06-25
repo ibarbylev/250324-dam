@@ -18,13 +18,15 @@
 import json
 from pprint import pprint
 
-from task_01 import users
-
 
 def read_json_file(filename) -> list[tuple[str, str, str, str]]:
     new_users: list[tuple[str, str, str, str]] = []
-    pass
-
+    with open(filename, encoding='utf-8') as file:
+        raw_list = json.load(file)
+        # [{'name': '', 'surname': 'Doe', 'birth_date': '2005-03-28', 'iban': 'DE44443333222211110000'}, .... ]
+        for item in raw_list:
+            new_item = item.get('name'), item.get('surname'), item.get('birth_date'), item.get('iban')
+            new_users.append(new_item)
     return new_users
 
 
