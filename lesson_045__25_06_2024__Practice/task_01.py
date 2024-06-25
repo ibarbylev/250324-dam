@@ -77,7 +77,9 @@ def age_validation(birth_date: str) -> bool:
     date_plus_18_years = date_obj.replace(year=date_obj.year + 18)
     today = datetime.now().date()
 
-    # AgeException("The client's age cannot be less than 18 years!")
+    if today < date_plus_18_years:
+        raise AgeException("The client's age cannot be less than 18 years!")
+    return True
 
 
 def iban_validation(iban: str) -> bool:
@@ -96,6 +98,10 @@ def validate_customers(list_tuples: list[tuple[str, ...]]) -> dict[str, list[str
         except NameException as e:
             errors.append(f'{e.__class__.__name__}: {e}')
 
+        try:
+            age_validation(birth_date)
+        except AgeException as e:
+            errors.append(f'{e.__class__.__name__}: {e}')
 
         pass
 

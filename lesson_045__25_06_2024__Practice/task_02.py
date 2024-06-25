@@ -14,7 +14,9 @@ def age_validation(birth_date: str) -> bool:
     date_plus_18_years = date_obj.replace(year=date_obj.year + 18)
     today = datetime.now().date()
 
-    # AgeException("The client's age cannot be less than 18 years!")
+    if today < date_plus_18_years:
+        raise AgeException("The client's age cannot be less than 18 years!")
+    return True
 
 
 try:
