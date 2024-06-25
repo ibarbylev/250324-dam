@@ -67,7 +67,7 @@ class IBANException(Exception):
 
 def name_validation(name, surname) -> bool:
     pass
-    # AgeException('Empty name or/and surname')
+    # NameException('Empty name or/and surname')
 
 
 def age_validation(birth_date: str) -> bool:
