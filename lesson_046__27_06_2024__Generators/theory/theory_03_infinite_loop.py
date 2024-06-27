@@ -1,7 +1,7 @@
 def infinity_counter():
-    yield 1
-    yield 2
-    yield 3
+    n = 1
+    while True:
+        yield n
 
 
 N_MAX = 10
