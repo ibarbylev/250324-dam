@@ -12,9 +12,12 @@ def letters_gen():
     print('---------')
 
 
+gen = letters_gen()
+
+
 def combined_gen():
     yield from numbers_gen()
-    yield from letters_gen()
+    yield from gen
     yield from [10, 20, 30]
 
 
@@ -29,7 +32,7 @@ print(""" ============= Если бы не было выражения yield fro
 def combined_gen_2():
     for value in numbers_gen():
         yield value
-    for value in letters_gen():
+    for value in gen:
         yield value
     for value in [10, 20, 30]:
         yield value
