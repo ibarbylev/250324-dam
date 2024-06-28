@@ -19,7 +19,7 @@
 
 def get_sum_nums_from_file(filename):
     with open(filename, encoding='utf-8') as file:
-        return sum([int(n) for n in file])
+        return sum((int(n) for n in file))
 
 
 print(get_sum_nums_from_file('huge_file.txt'))
