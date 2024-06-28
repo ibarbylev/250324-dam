@@ -1,4 +1,4 @@
-"""Создайте функцию infinite(lst, tries), которая
+"""Создайте функцию get_sequence(lst, tries), которая
 будет проходиться по элементам списка lst (целые числа)
 заданное количество раз (tries) циклически.
 Один раз - один элемент списка.
@@ -8,17 +8,20 @@
 то сначала выведется первый объект, потом последний, а потом опять первый.
 Результат работы функции представьте в виде строки, состоящей из tries количества символов
 """
+from typing import Iterator
 
 
-def infinitely_repeating_list(lst):
+def infinitely_repeating_list(lst) -> Iterator:
     while True:
         yield from lst
 
 
-# ======== variant 1 ===========
 def get_sequence(lst: list, tries: int) -> str:
     result = ''
-    pass
+    g = infinitely_repeating_list(lst)
+    for i in range(tries):
+        x = g.__next__()
+        result += str(x)
 
     return result
 

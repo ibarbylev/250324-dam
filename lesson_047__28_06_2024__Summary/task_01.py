@@ -9,10 +9,11 @@
 gen([1, 2, 3])  -> 1 2 3 1 2 3 1 2 3 1 ...
 """
 from typing import Iterator
-
+import itertools
 
 def gen(lst: list[int]) -> Iterator:
-    pass
+    while True:
+        yield from lst
 
 
 g = gen([1, 2, 3])
