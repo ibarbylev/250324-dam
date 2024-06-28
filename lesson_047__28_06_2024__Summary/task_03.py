@@ -7,7 +7,13 @@
 
 
 def gen_arithmetic_progression(start=0, step=5):
-    pass
+    generator = start
+    while True:
+        new_step = yield generator
+        if new_step is not None:
+            step = new_step
+
+        generator += step
 
 
 g = gen_arithmetic_progression()
