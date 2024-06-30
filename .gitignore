@@ -132,5 +132,5 @@ dmypy.json
 # Some service files
 t.py
 ttt.py
-tmp.py
+tmp.*
 huge_file.txt
