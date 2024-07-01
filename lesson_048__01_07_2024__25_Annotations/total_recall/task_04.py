@@ -4,7 +4,16 @@
 
 
 def square_generator():
-    pass
+    x = 0
+    while True:
+        next_one = yield x
+        if next_one is None:
+            next_one = 1
+
+        if next_one < 0:
+            x = next_one ** 3
+        else:
+            x = next_one ** 2
 
 
 gen = square_generator()
