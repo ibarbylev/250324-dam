@@ -8,6 +8,12 @@ def square_generator():
     x = 0
     while True:
         next_one = yield x
+
+        # if next_one is None:
+        #     next_one = 1
+
+        next_one = 1 if next_one is None else next_one
+
         x = next_one * next_one
 
 
