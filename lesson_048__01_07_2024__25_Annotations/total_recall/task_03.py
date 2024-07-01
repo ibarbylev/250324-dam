@@ -13,10 +13,17 @@
 def square_generator():
     x = 0
     while True:
-        next_one = yield x
-        if next_one is None:
-            next_one = 1
-        x = next_one * next_one
+        try:
+            next_one = yield x
+            if next_one is None:
+                next_one = 1
+            x = next_one ** 2
+        except ValueError as e:
+            print(f'ValueError, {e}')
+            print('Исключение успешно обработано!')
+        except GeneratorExit as e:
+            print(f"GeneratorExit, {e}")
+            break
 
 
 gen = square_generator()
