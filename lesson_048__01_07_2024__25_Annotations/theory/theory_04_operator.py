@@ -11,3 +11,6 @@ iter_value = map(lambda x, y: x + y, 'abc', 'cdef')
 
 for item in iter_value:
     print(item)
+# ac
+# bd
+# ce
