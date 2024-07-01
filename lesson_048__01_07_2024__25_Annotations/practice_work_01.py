@@ -11,8 +11,8 @@ print(word_multiply(text, 0)) # =>
 """
 
 
-def word_multiply():
-    pass
+def word_multiply(word: str, times: int) -> str:
+    return word * times
 
 
 text = 'python'
