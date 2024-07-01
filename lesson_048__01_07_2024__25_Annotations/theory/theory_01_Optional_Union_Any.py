@@ -1,7 +1,7 @@
 from typing import Optional, Union, Any
 
 
-def greet(name: Optional[str]) -> Union[str, int]:
+def greet(name: Optional[str] = None) -> Union[str, int]:
     if name is None:
         return "Hello, anonymous"
     else:
