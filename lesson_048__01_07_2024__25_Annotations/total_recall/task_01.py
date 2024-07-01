@@ -6,3 +6,9 @@
 def square_generator():
     pass
 
+
+print(gen.send(3))  # 9
+print(gen.send(4))  # 16
+print(gen.send(5))  # 25
+
+
