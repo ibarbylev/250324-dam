@@ -5,8 +5,14 @@
 
 
 def square_generator():
-    pass
+    x = 0
+    while True:
+        next_one = yield x
+        x = next_one * next_one
 
+
+gen = square_generator()
+next(gen)
 
 print(gen.send(3))  # 9
 print(gen.send(4))  # 16
