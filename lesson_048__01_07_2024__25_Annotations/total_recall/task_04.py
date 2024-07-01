@@ -15,4 +15,4 @@ print(gen.send(3))   # 9
 print(gen.send(-4))  # -64
 print(next(gen))     # 1
 print(next(gen))     # 1
-print(gen.send(-5))  # 125
+print(gen.send(-5))  # -125
