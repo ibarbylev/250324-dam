@@ -3,12 +3,17 @@
     - ключ, по которому нужно отсортировать список словарей.
 Функция должна быть аннотирована с помощью аннотаций типов.
 """
+from operator import itemgetter
 from pprint import pprint
-from typing import Any
+from typing import Any, List, Dict
 
 
-def sort_dicts_by_key():
-    pass
+def sort_dicts_by_key(dicts: List[Dict[str, Any]], key: str) -> List[Dict[str, Any]]:
+    # ==== variant 1 ====
+    # return sorted(dicts, key=lambda d: d[key])
+
+    # ==== variant 2 ====
+    return sorted(dicts, key=itemgetter('age'))
 
 
 example_dicts = [
