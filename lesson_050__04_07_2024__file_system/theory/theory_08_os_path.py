@@ -8,7 +8,7 @@ print(new_path)
 os.chdir(new_path)
 print(os.getcwd())
 
-separator = os.path.sep  # / for Linux or \ for Windows
+separator = os.path.sep  # / for posix or \ for Windows
 print('separator =', separator)
 
 # Дальше код будет работать только для Linux и macOS
