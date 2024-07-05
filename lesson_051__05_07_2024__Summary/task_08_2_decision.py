@@ -1,4 +1,4 @@
-"""Создайте функцию find_txt_file(), которая
+"""Создайте функцию find_py_file(), которая
  - обходит заданную директорию и её поддиректории,
  - находит все файлы с расширением .py,
  - и выводит их относительные пути и размеры
@@ -8,14 +8,14 @@
 import os
 
 
-def find_txt_files(directory):
+def find_py_files(directory):
     for root, dirs, files in os.walk(directory):
         for file in files:
             if file.endswith('.py'):
                 pass
 
 
-find_txt_files('.')
+find_py_files('.')
 
 # ./task_02.py 662
 # ./task_01.py 503
