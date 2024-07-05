@@ -17,8 +17,8 @@ lst1 = [2, 3, 4]
 lst2 = [2, 3, 4]
 
 
-def get_new_list(action, lst1, lst2):
-    pass
+def get_new_list(action: Callable, lst1: List[int], lst2: List[int]) -> List[int | float]:
+    return list(map(action, lst1, lst2))
 
 
 print(get_new_list(add, lst1, lst2))
