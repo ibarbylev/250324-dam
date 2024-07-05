@@ -6,8 +6,8 @@
 """
 
 
-def add_numbers():
-    pass
+def add_numbers(a: int, b: int) -> str:
+    return str(a) + str(b)
 
 
 print(add_numbers(11, 222))   # 11222
