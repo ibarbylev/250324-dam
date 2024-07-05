@@ -6,9 +6,11 @@
 Используйте аннотацию типов для аргументов и возвращаемого значения.
 """
 
+from typing import List
 
-def find_max_len(list_strings):
-    pass
+
+def find_max_len(list_strings: List[str]) -> None:
+    print(max(reversed(list_strings), key=len))
 
 
 fruits = ['Яблоко', 'Апельсин', 'Банан', 'Виноград', 'Клубника']
