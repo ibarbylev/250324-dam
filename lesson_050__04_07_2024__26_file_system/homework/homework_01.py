@@ -21,3 +21,5 @@ except IndexError as e:
     print(f"Похоже, что вы не указали исполняемый файл \n{e.__class__.__name__}: {e}")
 except Exception as e:
     print(f"{e.__class__.__name__}: {e}")
+
+# python homework_01.py example.py
