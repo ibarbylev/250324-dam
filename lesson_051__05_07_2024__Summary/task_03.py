@@ -20,8 +20,13 @@ pairs = [
 ]
 
 
-def count_products(pairs):
-    pass
+def count_products(pairs: List[Tuple[str, str]]) -> Dict[str, Dict[str, int]]:
+    d = {}
+    for person, fruit in pairs:
+        client_dict = d.setdefault(person, {})
+        d[person][fruit] = client_dict.get(fruit, 0) + 1
+
+    return d
 
 
 result = count_products(pairs)
