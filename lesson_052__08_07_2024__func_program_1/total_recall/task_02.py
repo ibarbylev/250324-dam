@@ -13,7 +13,12 @@ import os
 
 def list_directory(path):
     items = os.listdir(path)
-    pass
+    for item in items:
+        item_path = os.path.join(path, item)
+        if os.path.isdir(item_path):
+            print(f"[DIR]    {item_path}")
+        else:
+            print(f"[FILE]   {item_path}")
 
 
 list_directory('..')
