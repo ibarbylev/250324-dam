@@ -10,4 +10,6 @@ def at_least_one_is_bigger(nums: list[int | float], value: int | float):
 
 lst = [2, 9, 4, 1, 12]
 print(all_more_than_value(lst, 0))
+print(all_more_than_value(lst, 1))
 print(at_least_one_is_bigger(lst, 11))
+print(at_least_one_is_bigger(lst, 12))
