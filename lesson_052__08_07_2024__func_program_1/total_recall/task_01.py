@@ -11,4 +11,9 @@ python task_01.py 2 3 2
 2 + 3 + 2 = 7
 """
 
-pass
+import sys
+
+args = sys.argv[1:]
+total = sum(int(arg) for arg in args)
+
+print(f"{' + '.join(args)} = {total}")
