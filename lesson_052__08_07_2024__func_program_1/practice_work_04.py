@@ -16,7 +16,7 @@ from typing import Iterator
 
 my_list = ['apple', 'banana', 'cherry', 'date']
 
-zip_obj = ...
-print(f"Объект zip-ob является итератором: {...}")
+zip_obj = zip(range(len(my_list)), my_list)
+print(f"Объект zip-ob является итератором: {isinstance(zip_obj, Iterator)}")
 print(*zip_obj, sep='\n')
 
