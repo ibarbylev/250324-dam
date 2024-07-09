@@ -8,10 +8,11 @@
 Пример:
 [“The”, “quick”, “brown”, “fox”] -> [“THE”, “quick”, “brown”, “FOX”]
 """
+from typing import List, Iterator
 
 
-def upper_for_3_letters(words):
-    pass
+def upper_for_3_letters(words: List[str]) -> Iterator[str]:
+    return map(lambda w: w.upper() if len(w) == 3 else w, words)
 
 
 words = ["The", "quick", "brown", "fox"]
