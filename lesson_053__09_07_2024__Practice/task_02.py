@@ -4,14 +4,15 @@
 При описании генератора использовать аннотации.
 
 """
+from typing import Generator, List
 
 
-def gen(lst):
+def gen(lst: List[str]) -> Generator[str, None, None]:
     yield from lst
 
 
 words = ["This", "is", "a", "simple", "sentence"]
 
-words_iter = ...
-print(words_iter)
+words_string = " ".join(gen(words))
+print(words_string)
 # This is a simple sentence
