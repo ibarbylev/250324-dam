@@ -21,12 +21,12 @@ def read_file(filename):
     pass
 
 
-def get_the_oldest_person(data: Iterator) -> tuple[str, int]:
-    return max(data, key=lambda x: x[1])
+def get_the_oldest_person(data):
+   pass
 
 
-def get_persons_older_25(data: Iterator) -> Iterator[str]:
-    return (p[0] for p in data if p[1] > 25)
+def get_persons_older_25(data):
+    pass
 
 
 data_iter = read_file('persons.txt')
