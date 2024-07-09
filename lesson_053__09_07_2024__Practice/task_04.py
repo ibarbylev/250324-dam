@@ -32,5 +32,8 @@ write_file('words.json', words)
 words_iter = read_file('words.json')
 # print(type(words_iter))
 filtered_words = filter_long_words(words_iter)
-print(*filtered_words)
-# elephant tiger monkey
+
+print(*filtered_words, sep='\n')
+# elephant
+# tiger
+# monkey
