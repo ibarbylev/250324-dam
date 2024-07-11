@@ -11,7 +11,7 @@ print(result)
 """ ====================== variant 2 ======================= 
 попробуем сделать код более читабельным
 """
-sum_of_sq = ...
-sum_of_sq_even = ...
-res = ...
-print(res)
+sum_of_sq = map(lambda x: x ** 2, numbers)
+filtered_sq = filter(lambda x: x % 2 == 0, sum_of_sq)
+sum_of_sq_even = reduce(lambda x, y: x + y, filtered_sq)
+print(sum_of_sq_even)
