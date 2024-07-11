@@ -16,7 +16,8 @@ Generated 4557072 valid passwords and saved to file.
 import itertools
 import json
 
-POSSIBLE_SYMBOLS = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+# POSSIBLE_SYMBOLS = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+POSSIBLE_SYMBOLS = 'abAB89'
 
 
 def has_required_characters(password: str) -> bool:
@@ -37,8 +38,11 @@ def is_valid_password(password: str) -> bool:
 
 def generate_passwords(characters: str) -> list[str]:
     """Generate all valid passwords."""
-    pass
-
+    permutations = itertools.permutations(characters, 4)
+    # ('a', 'b', 'A', 'B'), ('a', 'b', 'A', '8'), ('a', 'b', 'A', '9'), ...
+    permutations = (''.join(p) for p in permutations if is_valid_password(p))
+    # 'abAB', 'abA8', 'abA9', 'abBA', ...
+    return list(permutations)
 
 def write_passwords_to_file(passwords: list[str], filename="tmp.json"):
     """Write the passwords to a file."""
@@ -47,5 +51,6 @@ def write_passwords_to_file(passwords: list[str], filename="tmp.json"):
 
 if __name__ == "__main__":
     valid_passwords = generate_passwords(POSSIBLE_SYMBOLS)
-    write_passwords_to_file(valid_passwords)
+    print(valid_passwords)
+    # write_passwords_to_file(valid_passwords)
     print(f"Generated {len(valid_passwords)} valid passwords and saved to file.")
