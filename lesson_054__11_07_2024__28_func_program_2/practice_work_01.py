@@ -16,18 +16,24 @@ Generated 4557072 valid passwords and saved to file.
 import itertools
 import json
 
-# POSSIBLE_SYMBOLS = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
-POSSIBLE_SYMBOLS = 'abAB89'
+POSSIBLE_SYMBOLS = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+# POSSIBLE_SYMBOLS = 'abAB89'
 
 
 def has_required_characters(password: str) -> bool:
-    """Check if the password has at least one uppercase, one lowercase, and one digit."""
-    pass
+    return (
+        any(p.upper() for p in password) and
+        any(p.lower() for p in password) and
+        any(p.isdigit() for p in password)
+    )
 
 
 def has_no_repeated_or_sequential_characters(password: str) -> bool:
     """Check if the password has no repeated or sequential characters."""
-    pass
+    for i in range(1, len(password)-1):
+        if abs(ord(password[i-1]) - ord(password[i])) <= 1:
+            return False
+    return True
 
 
 def is_valid_password(password: str) -> bool:
@@ -40,17 +46,20 @@ def generate_passwords(characters: str) -> list[str]:
     """Generate all valid passwords."""
     permutations = itertools.permutations(characters, 4)
     # ('a', 'b', 'A', 'B'), ('a', 'b', 'A', '8'), ('a', 'b', 'A', '9'), ...
-    permutations = (''.join(p) for p in permutations if is_valid_password(p))
+    permutations = (''.join(p) for p in permutations)
     # 'abAB', 'abA8', 'abA9', 'abBA', ...
-    return list(permutations)
+    val_passwords = filter(is_valid_password, permutations)
+    return list(val_passwords)
+
 
 def write_passwords_to_file(passwords: list[str], filename="tmp.json"):
     """Write the passwords to a file."""
-    pass
+    with open(filename, 'w', encoding='utf-8') as f:
+        json.dump(passwords, f, indent=4)
 
 
 if __name__ == "__main__":
     valid_passwords = generate_passwords(POSSIBLE_SYMBOLS)
     print(valid_passwords)
-    # write_passwords_to_file(valid_passwords)
+    write_passwords_to_file(valid_passwords)
     print(f"Generated {len(valid_passwords)} valid passwords and saved to file.")
