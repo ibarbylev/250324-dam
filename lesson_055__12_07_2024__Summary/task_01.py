@@ -16,6 +16,10 @@ list_2 = ['a', 'b', 'c', 'd', 'e', 'f']
 list_3 = [10, 20, 30, 40]
 data = [list_1, list_2, list_3]
 
-new_list = ...
+# ============== variant 1  ==============
+# new_list = map(lambda x: f"{x[0]}_{x[1]}_{x[2]}", data)
+
+# ============== variant 2  ==============
+new_list = map(lambda x, y, z: f"{x}_{y}_{z}", *data)
 print(*new_list, sep='  ')
 # 1_a_10  2_b_20  3_c_30  4_d_40
