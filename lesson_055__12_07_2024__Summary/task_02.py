@@ -6,6 +6,19 @@
 """
 nums = [0, 2, 0, 0, 4, 6]
 
-filtered_nums = ...
+
+def fn(x):
+    if x != 0:
+        return True
+
+
+# ============== variant 1  ==============
+# filtered_nums = filter(fn, nums)
+
+# ============== variant 2  ==============
+# filtered_nums = filter(None, nums)
+
+# ============== variant 3  ==============
+filtered_nums = filter(bool, nums)
 print(list(filtered_nums))
 # [2, 4, 6]
