@@ -34,6 +34,7 @@ class RightTriangle(Shape):
 
 
 rectangle = Rectangle(3, 4)
+print(rectangle.area())
 print(rectangle.__dict__)   # {'side1': 3, 'side2': 4}
 print(rectangle.__dir__())  # ['side1', 'side2', '__doc__', 'area', 'perimeter']
 print(rectangle.__doc__)    # Initialize a Rectangle object with the given side lengths.

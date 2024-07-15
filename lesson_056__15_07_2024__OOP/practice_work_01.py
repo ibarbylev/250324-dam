@@ -5,4 +5,15 @@
 
 
 class Person:
-    pass
+    def __init__(self, name):
+        self.name = name
+
+
+tom = Person("Tom")
+bob = Person("Bob")
+
+
+names = [tom, bob]
+
+for name in names:
+    print(name.name)
