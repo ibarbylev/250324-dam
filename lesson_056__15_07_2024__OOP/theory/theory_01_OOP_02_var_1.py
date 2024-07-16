@@ -50,6 +50,7 @@ r1 = Rectangle(3, 4)
 print(r1.__dict__)   # {'side1': 3, 'side2': 4}
 print(r1.__dir__())  # ['side1', 'side2', '__doc__', 'area', 'perimeter']
 print(r1.__doc__)
+print(Rectangle.__mro__)
 
 
 """ ====================== ПОЛИМОРФИЗМ (УНИФИКАЦИЯ) ======================= """
