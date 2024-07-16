@@ -13,6 +13,8 @@
 
 Используя функцию all() убедиться, что все сотрудники действительно старше 18 лет.
 """
+from typing import List
+
 from task_04 import Person, Employee
 
 data = [
@@ -27,4 +29,24 @@ data = [
     ("Ivan", "1999-04-01"),
     ("Judy", "1997-09-09")
 ]
+
+
+# persons = [Person(*line) for line in data]
+persons = [Person(name, birth_day) for name, birth_day in data]
+
+
+def from_p_to_e(persons: List[Person]) -> List[Employee]:
+    p_older_18 = filter(lambda p: p.get_age() > 18, persons)
+    return [Employee(p.name, p.get_age()) for p in p_older_18]
+
+
+print(*from_p_to_e(persons), sep='\n')
+
+# Charlie, 33
+# David, 44
+# Eve, 29
+# Frank, 21
+# Grace, 22
+# Ivan, 25
+# Judy, 26
 
