@@ -11,9 +11,11 @@ from task_02 import cars
 
 
 def get_cars_by_color(vehicles: List[Car], color: str) -> Iterator[Car]:
-    pass
+    return filter(lambda v: v.color == color, vehicles)
 
 
+f_cars = get_cars_by_color(cars, 'Red')
+print(*f_cars, sep='\n')
 
 # Car(brand=Golf, year=2020, color=Red)
 # Car(brand=Golf, year=2020, color=Red)

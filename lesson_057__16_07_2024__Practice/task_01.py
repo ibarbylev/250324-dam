@@ -8,7 +8,10 @@ class Car:
         self.color = color
 
     def __str__(self):
-        return f"{self.model} {self.year} {self.color}"
+        return f"(model={self.model}, year={self.year}, color={self.color})"
+
+    def __repr__(self):
+        return f"Car(model={self.model}, year={self.year}, color={self.color})"
 
 
 if __name__ == '__main__':
