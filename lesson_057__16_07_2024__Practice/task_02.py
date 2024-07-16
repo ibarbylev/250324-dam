@@ -18,7 +18,8 @@ data = [
     ('Nissan', 2013, 'Red')
 ]
 
-cars = ...
+# cars = [Car(model, year, color) for model, year, color in data]
+cars = [Car(*car) for car in data]
 
 
 if __name__ == '__main__':
