@@ -12,7 +12,14 @@
 
 
 class Animal:
-    pass
+    def __init__(self, name):
+        self.name = name
+
+    def eat(self):
+        pass
+
+    def run(self):
+        pass
 
 
 class Cat:
