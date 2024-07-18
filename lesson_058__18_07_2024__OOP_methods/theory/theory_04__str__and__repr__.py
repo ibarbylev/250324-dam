@@ -19,7 +19,7 @@ class Cat:
         return f'The cat named {self.name}'
 
     def __repr__(self):
-        return f'Cat("{self.name}")'
+        return f'Cat(name="{self.name}")'
 
     def eat(self):
         print(f'A cat named {self.name} is eating.  ест.')
