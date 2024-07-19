@@ -17,7 +17,15 @@
 
 
 class Car:
-    pass
+    count = 0
+
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+        Car.count += 1
+
+    def __str__(self):
+        return f'Марка: {self.brand}, Модель: {self.model}'
 
 
 print(Car.count)
