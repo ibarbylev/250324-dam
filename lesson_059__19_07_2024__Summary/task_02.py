@@ -12,7 +12,12 @@
 
 
 class Car:
-    pass
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+
+    def __str__(self):
+        return f"Марка {self.brand} Модель {self.model}"
 
 
 car1 = Car("Toyota", "Camry")
