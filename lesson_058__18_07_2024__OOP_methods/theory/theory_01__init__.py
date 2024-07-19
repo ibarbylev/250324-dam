@@ -1,4 +1,4 @@
-class Cat:
+class Cat(object):
     def __init__(self, name):
         self.name = name
 
@@ -8,3 +8,5 @@ class Cat:
 
 cat = Cat('Ryzhik')
 cat.eat()
+print(dir(Cat))
+print(cat.__dir__())
