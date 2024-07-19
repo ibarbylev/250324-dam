@@ -31,15 +31,27 @@ from typing import List, Tuple
 
 
 class Circle:
-    pass
+    def __init__(self, radius):
+        self.radius = radius
+
+    def get_area(self):
+        return math.pi * self.radius ** 2
+
+    def get_circumference(self):
+        return 2 * math.pi * self.radius
 
 
 def calculate_averages(circles: List[Circle]) -> Tuple[float, float]:
-    pass
+    sum_area = sum(circle.get_area() for circle in circles)
+    cnt = len(circles)
+    avg_area = sum_area / cnt
+    sum_circumference = sum(circle.get_circumference() for circle in circles)
+    avg_circumference = sum_circumference / cnt
+    return avg_area, avg_circumference
 
 
 random.seed(42)
-circles = ...
+circles = [Circle(random.randint(10, 50)) for _ in range(10)]
 
 
 av_area, av_circumference = calculate_averages(circles)
