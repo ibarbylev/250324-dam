@@ -24,24 +24,8 @@ class Animal:
     def make_sound(self):
         pass
         #  ------------------ удалить отсюда --------------------
-        print(f'Animal {self.__class__.__name__} says "{self.sound}".')
-
-    def __str__(self):
-        return f"Animal {self.__class__.__name__} with the sound {self.sound} is called {self.name}"
 
 
-class Dog(Animal):
-    pass
-
-
-class Cat(Animal):
-    pass
-
-
-class Bird(Animal):
-    pass
-
-#  ------------------ и до сюда --------------------
 
 
 dog = Dog('Sharik', "Bark")
