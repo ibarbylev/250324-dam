@@ -7,41 +7,33 @@ def get_request(url: str):
     return requests.get(url).text
 
 get_request('https://google.com')
+
+pip install requests
 """
 import time
-import requests
-from requests.exceptions import Timeout, RequestException
+import random
 
 
-def param_decorator(times):
-    def decorator(func):
-        def wrapper(*args, **kwargs):
-            total_time = 0
-            for i in range(times):
-                print(f"Iteration {i + 1}/{times}")
-                start_time = time.time()
-                try:
-                    func(*args, **kwargs)
-                except (Timeout, RequestException):
-                    print(f"Timeout, RequestException errors")
-                end_time = time.time()
-                total_time += end_time - start_time
-            average_time = total_time / times
-            print(f"Average time for {func.__name__}: {average_time:.6f} seconds")
-        return wrapper
-    return decorator
+
 
 
 @param_decorator(5)
-def get_request(url: str):
-    return requests.get(url, timeout=5).text
+def get_request():
+    x = random.randint(0, 2)
+    time.sleep(x)
+    print(f"   Delay is {x} seconds")
 
 
-get_request('https://google.com')
+get_request()
 
 # Iteration 1/5
+#    Delay is 2 seconds
 # Iteration 2/5
+#    Delay is 2 seconds
 # Iteration 3/5
+#    Delay is 0 seconds
 # Iteration 4/5
+#    Delay is 2 seconds
 # Iteration 5/5
-# Average time for get_request: 0.767245 seconds
+#    Delay is 0 seconds
+# Average time for get_request: 1.200120 seconds
