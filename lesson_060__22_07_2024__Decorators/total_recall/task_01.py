@@ -59,3 +59,8 @@ bird.make_sound()
 # Animal Bird with the sound Tweet is called Gosha
 # Animal Bird says "Tweet".
 
+print(Bird.__mro__)
+print(isinstance(dog, Animal))
+print(isinstance(dog, Dog))
+print(isinstance(cat, Dog))
+print(isinstance(cat, Animal))
