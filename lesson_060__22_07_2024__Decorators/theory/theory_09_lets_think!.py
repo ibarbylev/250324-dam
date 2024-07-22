@@ -1,3 +1,6 @@
+"""Давайте подумаем: "Что происходит в этом коде"? """
+
+
 def uppercase_decorator(function):
     def wrapper():
         func = function()
