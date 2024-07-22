@@ -3,8 +3,8 @@
 
 def uppercase_decorator(function):
     def wrapper():
-        func = function()
-        make_uppercase = func.upper()
+        sss = function()
+        make_uppercase = sss.upper()
         return make_uppercase
 
     return wrapper

@@ -15,7 +15,7 @@ def param_decorator(parameter):
 
 
 # Однако декоратор в Python имеет более удобное обозначение
-@param_decorator(2)
+@param_decorator(3)
 def some_func(comment):
     """Doc_string for some_func"""
     print(f'Something useful...{comment}')
