@@ -9,6 +9,8 @@ def get_request(url: str):
 get_request('https://google.com')
 
 pip install requests
+(pip3 install requests)
+
 """
 import time
 import random
