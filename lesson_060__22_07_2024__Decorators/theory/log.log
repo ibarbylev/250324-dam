@@ -1,0 +1,9 @@
+2024-07-22 11:30:45,385 - DEBUG    - Logging debug for function 5
+2024-07-22 11:30:45,385 - INFO     - Logging info for function 5
+2024-07-22 11:30:45,385 - WARNING  - Logging warning for function 5
+2024-07-22 11:30:45,385 - ERROR    - Logging error for function 5
+2024-07-22 11:30:45,385 - CRITICAL - Logging critical for function 5
+2024-07-22 11:31:26,033 - INFO     - Logging info for function 5
+2024-07-22 11:31:26,034 - WARNING  - Logging warning for function 5
+2024-07-22 11:31:26,034 - ERROR    - Logging error for function 5
+2024-07-22 11:31:26,034 - CRITICAL - Logging critical for function 5
