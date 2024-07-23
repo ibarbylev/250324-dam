@@ -10,11 +10,18 @@ from task_01 import Circle, Square, Rectangle
 
 
 figures = [
-    ...
+    Circle(name="circle", radius=5),
+    Circle(name="circle", radius=3),
+    Square(name="square", side=4),
+    Square(name="square", side=6),
+    Rectangle(name="rectangle", side1=3, side2=4),
+    Rectangle(name="rectangle", side1=5, side2=6)
 ]
 
 for figure in figures:
-    pass
+    area = figure.calculate_area()
+    print(f"Area of {figure}: {area:.2f}")
+
 
 # Area of Circle(name=circle, radius=5): 78.54
 # Area of Circle(name=circle, radius=3): 28.27
