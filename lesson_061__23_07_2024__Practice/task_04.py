@@ -47,6 +47,11 @@ class DoubleCoffee:
         return DoubleCoffee
 
 
+@DoubleCoffee()
+class DoubleCoffeeCup(Coffee):
+    pass
+
+
 @WithSugar()
 class CoffeeWithSugar(Coffee):
     pass
@@ -60,11 +65,6 @@ class CoffeeWithMilk(Coffee):
 @WithSugar()
 @WithMilk()
 class CoffeeWithSugarAndMilk(Coffee):
-    pass
-
-
-@DoubleCoffee()
-class DoubleCoffeeCup(Coffee):
     pass
 
 
