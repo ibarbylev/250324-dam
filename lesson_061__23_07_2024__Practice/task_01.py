@@ -29,19 +29,36 @@ class Shape:
 
     def __str__(self):
         """ClassName(attr1=value1, attr2=value2, ...)"""
-        pass
+        attrs_string = [f"{k}={v}" for k, v in self.__dict__.items()]
+        return f"{self.__class__.__name__}({', '.join(attrs_string)})"
 
 
 class Circle(Shape):
-    pass
+    def __init__(self, name, radius):
+        super().__init__(name)
+        self.radius = radius
+
+    def calculate_area(self):
+        return round(PI * self.radius ** 2, 2)
 
 
 class Square(Shape):
-    pass
+    def __init__(self, name, side):
+        super().__init__(name)
+        self.side = side
+
+    def calculate_area(self):
+        return self.side ** 2
 
 
 class Rectangle(Shape):
-    pass
+    def __init__(self, name, side1, side2):
+        super().__init__(name)
+        self.side1 = side1
+        self.side2 = side2
+
+    def calculate_area(self):
+        return self.side1 * self.side2
 
 
 if __name__ == '__main__':
