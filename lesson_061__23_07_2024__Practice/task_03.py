@@ -4,7 +4,7 @@
 Создайте 4 декоратора так, чтобы в итоге каждый из них добавлял бы
 к слову "кофе" следующие фразы:
     - с сахаром,
-    - молоком
+    - с молоком
     - с сахаром и молоком
     - двойной
 
@@ -21,22 +21,35 @@
 
 
 def with_sugar(func):
-    pass
+    def wrapper():
+        func()
+        print("с сахаром", end=' ')
+    return wrapper
 
 
 def with_milk(func):
-    pass
+    def wrapper():
+        func()
+        print("с молоком", end=' ')
+    return wrapper
 
 
 def with_sugar_and_milk(func):
-    pass
+    def wrapper():
+        func()
+        print("с сахаром и молоком", end=' ')
+    return wrapper
 
 
 def double_coffee(func):
-    pass
+    def wrapper():
+        func()
+        print("двойной", end=' ')
+    return wrapper
 
 
 @with_milk
+@with_sugar
 @double_coffee
 def coffee1():
     print("Сварить кофе", end=' ')
@@ -57,7 +70,7 @@ coffee1()
 print()
 
 coffee2()
-print()
+# print()
 
 coffee3()
 print()
