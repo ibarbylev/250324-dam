@@ -28,6 +28,7 @@ class Shape:
         pass
 
     def __str__(self):
+        """ClassName(attr1=value1, attr2=value2, ...)"""
         pass
 
 
@@ -45,8 +46,20 @@ class Rectangle(Shape):
 
 if __name__ == '__main__':
     r = Rectangle("rectangle", 3, 4)
-    print(r)  # Rectangle(name=rectangle, side1=3, side2=4)
     c = Circle("circle", 3)
-    print(c)
     sq = Square("square", 4)
+
+    print(r)
+    print(c)
     print(sq)
+
+    print(r.calculate_area())
+    print(c.calculate_area())
+    print(sq.calculate_area())
+
+    # Rectangle(name=rectangle, side1=3, side2=4)
+    # Circle(name=circle, radius=3)
+    # Square(name=square, side=4)
+    # 12
+    # 28.274333882308138
+    # 16
