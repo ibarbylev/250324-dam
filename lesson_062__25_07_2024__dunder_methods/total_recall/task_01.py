@@ -13,29 +13,25 @@ pip install requests
 
 """
 import time
-import random
-
-
+import requests
 
 
 
 @param_decorator(5)
 def get_request(url):
-    x = random.randint(0, 2)
-    time.sleep(x)
-    print(f"   Delay is {x} seconds")
+    requests.get(url)
 
 
 get_request('https://google.com')
 
 # Iteration 1/5
-#    Delay is 2 seconds
+# Delay is 1.21 seconds
 # Iteration 2/5
-#    Delay is 2 seconds
+# Delay is 1.23 seconds
 # Iteration 3/5
-#    Delay is 0 seconds
+# Delay is 1.43 seconds
 # Iteration 4/5
-#    Delay is 2 seconds
+# Delay is 1.43 seconds
 # Iteration 5/5
-#    Delay is 0 seconds
-# Average time for get_request: 1.200120 seconds
+# Delay is 1.02 seconds
+# Average time executing get_request:  1.27 seconds
