@@ -19,7 +19,7 @@ import requests
 
 @param_decorator(5)
 def get_request(url):
-    requests.get(url)
+    return requests.get(url).text
 
 
 get_request('https://google.com')
