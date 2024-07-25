@@ -20,7 +20,7 @@ class CustomList:
     # ====== делаем ТОЛЬКО СВОЮ конкатенацию списков ======
 
     def __add__(self, other):
-        return CustomList(*list(set(self.items) | set(other.items)))
+        return CustomList(*(set(self.items) | set(other.items)))
 
 
 # Примеры использования
