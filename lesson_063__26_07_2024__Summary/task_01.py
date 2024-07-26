@@ -7,7 +7,10 @@
 
 
 def reverse_args_decorator(func):
-    pass
+    def wrapper(*args):
+        new_args = args[::-1]
+        func(*new_args)
+    return wrapper
 
 
 @reverse_args_decorator
