@@ -9,16 +9,16 @@ from datetime import datetime
 
 
 class Person:
-    def __init__(self, height, weight, birth_year):
+    def __init__(self, height: int, weight: int, birth_year: int):
         self.height = height
         self.weight = weight
         self.birth_year = birth_year
 
     def __add__(self, other):
-        avg_height = ...
-        avg_weight = ...
-        child_height = ...
-        child_weight = ...
+        avg_height = (self.height + other.height) / 2
+        avg_weight = (self.weight + other.weight) / 2
+        child_height = int(avg_height / 4)
+        child_weight = int(avg_weight / 20)
         child_birth_year = datetime.now().year
 
         return Person(child_height, child_weight, child_birth_year)
@@ -33,4 +33,4 @@ mather = Person(168, 59, 2000)
 father = Person(182, 82, 1995)
 
 child = mather + father
-print(child)  # Person(height=43.75, weight=3.45, birth_year=2024)print
+print(child)  # Person(height=43, weight=3, birth_year=2024)
