@@ -13,7 +13,13 @@ def tmp(*args):
 
 
 def timer_execution(func):
-    pass
+    def wrapper(*args):
+        start = time.time()
+        func(*args)
+        end = time.time()
+        delta = end - start
+        print(f"Время работы функции {func.__name__}:  {delta:.4f}")
+    return wrapper
 
 
 @timer_execution
