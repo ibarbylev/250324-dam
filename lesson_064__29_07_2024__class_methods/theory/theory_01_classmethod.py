@@ -10,6 +10,7 @@ class MyClass:
         print(cls.count)
 
 
+print(MyClass.count)  # 0
 MyClass.print_count()  # 0
 MyClass.increase_counter_by_1()
 MyClass.print_count()  # 1
