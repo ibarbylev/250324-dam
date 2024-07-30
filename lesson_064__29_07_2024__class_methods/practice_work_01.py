@@ -60,7 +60,7 @@ print(t.start_engine())
 print(t.print_color())
 
 
-# Engine for car model WV Passat is started
-# The color for this model WV Passat 2024 is red.
+# Engine for car model VW Passat is started
+# The color for this model VW Passat 2024 is red.
 # Engine for car model Toyota Camry is started
-# The color for this model WV Passat 2024 is green.
+# The color for this model VW Passat 2024 is green.
