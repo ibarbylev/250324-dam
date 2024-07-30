@@ -15,10 +15,43 @@
             "The color for this model WV Passat is red."
 Дочерние классы содержат дополнительный атрибут color (цвет)
 """
+from abc import ABC, abstractmethod
 
 
+class Car(ABC):
+    def __init__(self, brand, model, year):
+        self.brand = brand
+        self.model = model
+        self.year = year
 
-wv = WV('WV', 'Passat', 2024, 'red')
+    def start_engine(self):
+        return f"Engine for Car model {self.brand} {self.model} is started"
+
+    @abstractmethod
+    def print_color(self):
+        return f"The color for this model {self.brand} {self.model} {self.year} is "
+
+
+class VW(Car):
+    def __init__(self, brand, model, year, color):
+        super().__init__(brand, model, year)
+        self.color = color
+
+    def print_color(self):
+        return f"The color for this model {self.brand} {self.model} {self.year} is {self.color}."
+
+
+class Toyota(Car):
+    def __init__(self, brand, model, year, color):
+        super().__init__(brand, model, year)
+        self.color = color
+
+    def print_color(self):
+        s = super().print_color()
+        return s + self.color + "."
+
+
+wv = VW('VW', 'Passat', 2024, 'red')
 print(wv.start_engine())
 print(wv.print_color())
 
