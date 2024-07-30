@@ -16,6 +16,7 @@
 Дочерние классы содержат дополнительный атрибут color (цвет)
 """
 from abc import ABC, abstractmethod
+from pprint import pprint
 
 
 class Car(ABC):
@@ -47,13 +48,17 @@ class Toyota(Car):
         self.color = color
 
     def print_color(self):
-        s = super().print_color()
+        s = self._get_info()
         return s + self.color + "."
 
+    # защищённый метод в качестве примера
+    def _get_info(self):
+        return super().print_color()
 
-wv = VW('VW', 'Passat', 2024, 'red')
-print(wv.start_engine())
-print(wv.print_color())
+
+vw = VW('VW', 'Passat', 2024, 'red')
+print(vw.start_engine())
+print(vw.print_color())
 
 t = Toyota('Toyota', 'Camry', 2024, 'green')
 print(t.start_engine())
