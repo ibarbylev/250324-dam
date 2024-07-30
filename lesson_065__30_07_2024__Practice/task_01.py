@@ -65,10 +65,33 @@ from abc import ABC, abstractmethod
 
 
 class Plant(ABC):
-    pass
+    def __init__(self, display_name, height, age,  delta_grow_per_season):
+        self.display_name = display_name
+        self.height = height
+        self.age = age
+        self.delta_grow_per_season = delta_grow_per_season
+
+    def do_spring(self):
+        self.height += self.delta_grow_per_season * 0,5
+        return f"{self.__class__.__name__} grows in spring, height is now {self.height} cm"
+
+    def do_summer(self):
+        self.height += self.delta_grow_per_season * 0, 5
+        return f"{self.__class__.__name__} grows in summer, height is now {self.height} cm"
+
+    @abstractmethod
+    def do_autumn(self):
+        pass
+
+    @abstractmethod
+    def do_winter(self):
+        return f"{self.__class__.__name__} does not grow in winter, height is now {self.height} cm"
 
     def grow_per_season(self):
-        pass
+        self.do_spring()
+        self.do_summer()
+        self.do_autumn()
+        self.do_winter()
 
 
 class Flower(Plant):
