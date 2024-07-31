@@ -1,7 +1,9 @@
-"""Реализуйте класс библиотеки Library, с атрибутом
+"""Реализуйте класс библиотеки Library,
+с атрибутом
     - shelf: список, представляющий полку библиотеки
-и методами
-    - add_book: добавляет новую книгу на полку библиотеки, используя метод Book.create.
+и методом
+    - add_book: добавляет новую книгу на полку библиотеки,
+                используя метод Book.create_book()..
 
 Также необходимо создать (переопределить) некоторые dunder методы (см.примеры вывода)
 """
@@ -11,22 +13,7 @@ from task_01 import Book
 
 
 class Library:
-    def __init__(self):
-        self.shelf = []
-
-    def add_book(self, title, author):
-        new_book = Book.create_book(title, author)
-        self.shelf.append(new_book)
-
-    def __getitem__(self, index):
-        books = self.shelf[index]
-        if isinstance(index, slice):
-            return [str(book) for book in books]
-        return books
-
-    def __str__(self):
-        books = "\n".join([f" - {str(b)}" for b in self.shelf])
-        return f"The total number of books in the library is {len(self.shelf)}:\n{books}"
+    pass
 
 
 library = Library()

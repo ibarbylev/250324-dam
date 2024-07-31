@@ -3,41 +3,16 @@
     title (название)
 Реализуйте доступ к этим атрибутам через геттеры и сеттеры.
 
-Далее необходимо создать метод
+Далее необходимо создать класс-метод
     - create_book(title, author), который принимает название книги и её автора
-    и возвращает экземпляр класса Book.
+                                  и возвращает экземпляр класса Book.
 
 Не забудьте также реализовать метод __str__
 """
 
 
 class Book:
-    def __init__(self, title, author):
-        self.__title = title
-        self.__author = author
-
-    @property
-    def title(self):
-        return self.__title
-
-    @title.setter
-    def title(self, author):
-        self.__author = author
-
-    @property
-    def author(self):
-        return self.__title
-
-    @author.setter
-    def author(self, author):
-        self.__author = author
-
-    @classmethod
-    def create_book(cls, title, author):
-        return cls(title, author)
-
-    def __str__(self):
-        return f'Book "{self.__title}" by {self.__author}'
+    pass
 
 
 if __name__ == '__main__':
