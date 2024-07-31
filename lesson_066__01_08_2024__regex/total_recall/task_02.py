@@ -44,7 +44,7 @@ print(library[0])
 # Book War and Peace by Leo Tolstoy
 
 print(library)
-# The total number of books in the library is 3:
+# The total number of books in the library is 4:
 #  - Book "War and Peace" by Leo Tolstoy
 #  - Book "Pride and Prejudice" by Jane Austen
 #  - Book "Ten Little Niggers" by Agatha Christie
