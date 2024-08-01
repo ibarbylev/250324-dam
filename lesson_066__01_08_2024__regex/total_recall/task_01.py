@@ -41,8 +41,8 @@ class Book:
 
 
 if __name__ == '__main__':
-    book1 = Book.create_book("Leo Tolstoy", "War and Peace")
-    book2 = Book.create_book("Jane Austen", "Pride and Prejudice")
+    book1 = Book.create_book("War and Peace", "Leo Tolstoy", )
+    book2 = Book.create_book("Pride and Prejudice", "Jane Austen")
 
     print(book1)
     print(book2)
