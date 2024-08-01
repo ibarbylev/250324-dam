@@ -13,7 +13,21 @@ from task_01 import Book
 
 
 class Library:
-    pass
+    def __init__(self):
+        self.shelf = []
+
+    def add_book(self, title, author):
+        self.shelf.append(Book.create_book(title, author))
+
+    def __str__(self):
+        books_str = "\n".join(f'- {str(b)}' for b in self.shelf)
+        return f"""The total number of books in the library is {len(self.shelf)}:\n{books_str}"""
+
+    def __getitem__(self, index):
+        if isinstance(index, slice):
+            books = [str(b) for b in self.shelf[index]]
+            return books
+        return self.shelf[index]
 
 
 library = Library()
