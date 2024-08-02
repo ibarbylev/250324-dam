@@ -20,5 +20,5 @@ print(replaced_text)
 """Что надо сделать, если мы хотим окружить КАЖДОЕ слово?"""
 new_pattern = r"(\b\w+\b)"
 new_text = "Hello hello world worLd"
-replaced_text = re.sub(new_pattern, r"***\1***", text, flags=re.IGNORECASE)
+replaced_text = re.sub(new_pattern, r"***\1***", new_text, flags=re.IGNORECASE)
 print(replaced_text)
