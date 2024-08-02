@@ -18,7 +18,7 @@ text = """
 
 # Регулярное выражение для поиска email-адресов
 # negative lookbehind  (?<!  )
-email_pattern = ...
+email_pattern = r'[A-Za-z0-9_\.-]+@[A-Za-z0-9_\.]+(?<!\.)\.[A-Za-z0-9_]{2,}'
 
 # Используем findall для нахождения всех совпадений
 emails = re.findall(email_pattern, text)
