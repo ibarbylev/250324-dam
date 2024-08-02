@@ -17,8 +17,10 @@ replaced_text = re.sub(pattern, r"***\1***", text)
 print(replaced_text)
 # ***hello*** ***world***
 
-"""Что надо сделать, если мы хотим окружить КАЖДОЕ слово?"""
-new_pattern = r"(\b\w+\b)"
+"""Что надо сделать, если мы хотим окружить КАЖДОЕ слово,
+причём независимо от регистра.
+"""
+new_pattern = r"(\b[a-z]+\b)"
 new_text = "Hello hello world worLd"
 replaced_text = re.sub(new_pattern, r"***\1***", new_text, flags=re.IGNORECASE)
 print(replaced_text)
