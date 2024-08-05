@@ -7,6 +7,6 @@ def my_generator():
 
 
 gen = my_generator()
-next(gen)
+print(next(gen))
 print(gen.send(5))    # Выводит 10
 # print(gen.send(-2))   # Выводит -6
