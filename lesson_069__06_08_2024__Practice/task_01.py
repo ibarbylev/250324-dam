@@ -5,7 +5,10 @@
 """
 import re
 
-contains_alphanumeric = lambda s: bool(re.search(r'...', s))
+
+def contains_alphanumeric(text):
+    return bool(re.search(r'[0-9a-zA-Z]+', text))
+
 
 print(contains_alphanumeric("Hello123"))  # True
 print(contains_alphanumeric("!@#$%^"))    # False
