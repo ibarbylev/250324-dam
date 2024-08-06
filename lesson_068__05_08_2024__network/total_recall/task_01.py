@@ -30,7 +30,7 @@ Here are some phone numbers:
 
 pattern = r"..."
 
-matches = re.findall(pattern, text)
+matches = ...
 
 for match in matches:
     print(match)
