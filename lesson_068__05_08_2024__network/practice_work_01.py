@@ -11,8 +11,13 @@
 import requests
 
 
-URL = "https://ru.wikipedia.org/wiki/REST/"
+URL = "https://ru.wikipedia.org/wiki/REST"
 
+response = requests.get(URL)
+if response.status_code == 200:
+    print(f"The site {URL} is available")
+else:
+    print(f"The site {URL} is NOT available")
 
 
 # The site https://ru.wikipedia.org/wiki/REST is available

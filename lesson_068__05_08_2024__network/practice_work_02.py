@@ -17,6 +17,10 @@ today = datetime.date.today()
 month = today.month
 day = today.day
 
+url = f"http://numbersapi.com/{month}/{day}/date"
+
+response = requests.get(url)
+print(response.text)
 
 
 # http://numbersapi.com/8/5/date
