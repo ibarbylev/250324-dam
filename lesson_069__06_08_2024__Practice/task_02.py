@@ -6,7 +6,7 @@
 import re
 
 
-contains_ab_0_or_more = lambda s: bool(re.search(r'...', s))
+contains_ab_0_or_more = lambda s: bool(re.search(r'ab*', s))
 
 print(contains_ab_0_or_more("a"))     # True
 print(contains_ab_0_or_more("ab"))    # True
