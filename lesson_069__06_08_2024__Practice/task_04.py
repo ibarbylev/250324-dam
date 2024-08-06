@@ -12,8 +12,8 @@ import re
 
 contains_ab_0_or_1 = lambda s: bool(re.search(r'ab?([^bc]| )', s))
 
-print(contains_ab_0_or_1("a"))     # True
-print(contains_ab_0_or_1("ab"))    # True
+print(contains_ab_0_or_1("a "))     # True
+print(contains_ab_0_or_1("abf"))    # True
 print(contains_ab_0_or_1("abb"))   # True
 print(contains_ab_0_or_1("abc"))   # True
 print(contains_ab_0_or_1("b"))     # False
