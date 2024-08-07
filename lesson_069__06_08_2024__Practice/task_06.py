@@ -6,7 +6,7 @@
 """
 import re
 
-contains_only_alphanum_and___ = lambda s: bool(re.search(r'...', s))
+contains_only_alphanum_and___ = lambda s: bool(re.search(r'^[0-9a-zA-Z_]+$', s))
 
 # Примеры использования
 print(contains_only_alphanum_and___("Hello_123"))  # True

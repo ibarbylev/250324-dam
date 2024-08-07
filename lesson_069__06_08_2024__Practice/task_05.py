@@ -5,7 +5,7 @@
 """
 import re
 
-contains_z = lambda s: bool(re.search(r'...', s))
+contains_z = lambda s: bool(re.search(r'z', s))
 
 print(contains_z("zebra"))    # True
 print(contains_z("pizza"))    # True
