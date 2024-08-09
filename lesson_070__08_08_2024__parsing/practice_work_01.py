@@ -9,7 +9,27 @@ from bs4 import BeautifulSoup
 
 url = "https://www.cbr.ru/currency_base/daily/"
 
+response = requests.get(url)
 
+if response.status_code == 200:
+    soup = BeautifulSoup(response.text, 'html.parser')
+
+    table = soup.find('table', {'class': 'data'})
+
+    currency_rates = []
+
+    for row in table.find_all('tr')[1:]:
+        columns = row.find_all('td')
+        currency_code = columns[1].text.strip()  # Код валюты
+        currency_name = columns[3].text.strip()  # Название валюты
+        currency_value = columns[4].text.strip()  # Курс валюты
+        currency_rates.append((currency_code, currency_name, currency_value))
+
+    # Выводим полученные курсы валют
+    for code, name, value in currency_rates:
+        print(f"{code} ({name}): {value}")
+else:
+    print(f"Ошибка при выполнении запроса: {response.status_code}")
 
 
 # AUD (Австралийский доллар): 56,3087
