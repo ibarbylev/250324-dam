@@ -13,12 +13,9 @@ def get_all_selectors_class(url):
     response = requests.get(url)
     if response.status_code == 200:
         soup = BeautifulSoup(response.text, 'html.parser')
-
-        pass
-
-        total_items = []
-        print(*set(total_items), sep='\n')
-
+        tags = soup.find_all(class_=True)
+        for class_ in set(tags):
+            print(class_['class'][0])
     else:
         print(f"Ошибка при выполнении запроса: {response.status_code}")
 
