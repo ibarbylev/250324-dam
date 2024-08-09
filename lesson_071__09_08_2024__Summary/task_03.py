@@ -1,4 +1,4 @@
-from local_settings import HOST, USER, PASSWORD, DATABASE
+from settings import HOST, USER, PASSWORD, DATABASE
 
 dbconfig = {
     'host': HOST,
