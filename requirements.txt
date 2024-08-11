@@ -10,6 +10,7 @@ kiwisolver==1.4.5
 lorem==0.1.1
 lorem-text==2.1
 matplotlib==3.9.0
+mysql-connector-python==9.0.0
 numpy==2.0.0
 packaging==24.1
 pillow==10.4.0
