@@ -24,7 +24,8 @@ dbconfig = {
 def get_table_data(cursor, table_name) -> None:
     try:
         query = f"SHOW TABLES LIKE '{table_name}'"
-        result = ...
+        cursor.execute(query)
+        result = list(cursor)
         if not result:
             print(f"Тhe table <{table_name}> does not exist!")
             return
