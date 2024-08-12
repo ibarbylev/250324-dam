@@ -22,9 +22,13 @@ def get_html(filename: str) -> str:
 html_content = get_html('example_table.html')
 soup = BeautifulSoup(html_content, 'html.parser')
 
-table = ...
+table = soup.find('table', class_='data')
+rows = table.find_all('tr')
 
-
+for row in rows:
+    items = row.find_all('td')
+    _, code, _, desc, value = items
+    print(items)
 
 
 
