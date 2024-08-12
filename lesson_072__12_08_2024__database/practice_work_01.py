@@ -29,12 +29,9 @@ def get_table_data(cursor, table_name) -> None:
             print(f"Тhe table <{table_name}> does not exist!")
             return
 
-
-
-
-        rows = ...
-
-        print(f" ===== Table '{table_name}': =====")
+        cursor.execute(f"SELECT * FROM {table_name};")
+        rows = cursor.fetchall()
+        print(f" ===== Table {table_name}: =====")
         for row in rows:
             print(row)
 
@@ -43,11 +40,10 @@ def get_table_data(cursor, table_name) -> None:
 
 
 if __name__ == "__main__":
-    pass
-
-
-    for name in ['Users', 'Products', 'Sales', 'No_name']:
-        get_table_data(cursor, name)
+    with mysql.connector.connect(**dbconfig) as connection:
+        with connection.cursor() as cursor:
+            for name in ['Users', 'Products', 'Sales', 'No_name']:
+                get_table_data(cursor, name)
 
 
 #  ===== Table 'Users': =====
@@ -57,3 +53,5 @@ if __name__ == "__main__":
 #  ===== Table 'Sales': =====
 # (1, 1, 1)
 # Тhe table <No_name> does not exist!
+
+
