@@ -25,40 +25,44 @@ dbconfig = {
 }
 
 
+def hard_select(cursor, user_name):
+    try:
+        cursor.execute(f"""
+            SELECT 
+                U.name, P.prod, P.quantity
+            FROM
+                Sales AS S
+                    LEFT JOIN
+                Users AS U ON S.id = U.id
+                    LEFT JOIN
+                Products AS P ON S.pid = P.pid
+            WHERE
+                U.name = '{user_name}';
+        """)
+
+        rows = cursor.fetchall()
+
+        if rows:
+            print(f" ===== Purchases of User <{user_name}> : =====")
+            for row in rows:
+                print(row)
+        else:
+            print(f'User {user_name} has no purchases')
+
+    except Exception as e:
+            print(f"{e.__class__.__name__}: {e}")
+
+
 if __name__ == "__main__":
     with mysql.connector.connect(**dbconfig) as connection:
         with connection.cursor() as cursor:
 
-            try:
-                # Получаем список пользователей
-                get_table_data(cursor, 'Users')
+            # Получаем список пользователей
+            get_table_data(cursor, 'Users')
 
-                user_name = input('Please enter the username: ')
+            user_name = input('Please enter the username: ')
 
-                cursor.execute(f"""
-                    SELECT 
-                        U.name, P.prod, P.quantity
-                    FROM
-                        Sales AS S
-                            LEFT JOIN
-                        Users AS U ON S.id = U.id
-                            LEFT JOIN
-                        Products AS P ON S.pid = P.pid
-                    WHERE
-                        U.name = '{user_name}';
-                """)
-
-                rows = cursor.fetchall()
-
-                if rows:
-                    print(f" ===== Purchases of User <{user_name}> : =====")
-                    for row in rows:
-                        print(row)
-                else:
-                    print(f'User {user_name} has no purchases')
-
-            except Exception as e:
-                print(f"{e.__class__.__name__}: {e}")
+            hard_select(cursor, user_name)
 
 
 #  ===== Table 'Users': =====

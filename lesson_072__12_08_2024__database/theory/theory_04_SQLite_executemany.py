@@ -13,7 +13,7 @@ print('rows', cursor.fetchone())
 
 # ---------------------------Запрос на изменение----------------------------- #
 cursor.executemany(
-    "INSERT INTO Artist VALUES (?, ?)",
+    "INSERT INTO Artist VALUES (?, ?);",
     [(None, 'No_name_1'), (None, 'No_name_2'), (None, 'No_name_3')]
 )
 connection.commit()
