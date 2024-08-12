@@ -3,12 +3,15 @@
 
 # 1. Необходимо подключить (импортировать_ библиотеку, соответствующую вашей БД
 import sqlite3
+from typing import Iterator
 
 # 2. Установить постоянное соединение с БД
 connection = sqlite3.connect("demo.sqlite")
 
 # 3. Создать объект для управления БД
 cursor = connection.cursor()
+print('Is cursor Iterator?', isinstance(cursor, Iterator))
+
 cursor.execute("SELECT Name FROM Artist ORDER BY Name LIMIT 3")
 
 # 4. Извлечение информации из курсора
