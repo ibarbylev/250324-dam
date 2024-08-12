@@ -25,11 +25,18 @@ soup = BeautifulSoup(html_content, 'html.parser')
 table = soup.find('table', class_='data')
 rows = table.find_all('tr')
 
+usd, eur = 0, 1
 for row in rows:
     items = row.find_all('td')
-    _, code, _, desc, value = items
-    print(items)
+    if len(items) == 5:
+        _, code, _, desc, value = items
+        print(code.text, desc.text, value.text)
+        if 'USD' == code.text:
+            usd = float(value.text.replace(',', '.'))
+        if 'EUR' == code.text:
+            eur = float(value.text.replace(',', '.'))
 
+print(f"\nКурс евро к доллару: {usd / eur:.4f}")
 
 
 # AUD Австралийский доллар 58,0043
