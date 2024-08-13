@@ -10,6 +10,9 @@ html = response.text
 
 soup = BeautifulSoup(html, 'html.parser')
 cards = soup.find_all('div', class_='catalog-item-info')
+
+urls = []
+
 card = cards[0]
 first_tag_a = card.find('a', href=True)
 print(first_tag_a)
