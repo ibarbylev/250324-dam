@@ -27,7 +27,7 @@ data = ...  # (json object)
 
 
 photos = data['photos']['photo']
-foto_urls = []
+photo_urls = []
 for photo in photos:
     photo_id = photo['id']
     farm_id = photo['farm']
@@ -35,5 +35,5 @@ for photo in photos:
     secret = photo['secret']
 
     photo_url = f'https://farm{farm_id}.staticflickr.com/{server_id}/{photo_id}_{secret}.jpg'
-    foto_urls.append(photo_url)
+    photo_urls.append(photo_url)
 
