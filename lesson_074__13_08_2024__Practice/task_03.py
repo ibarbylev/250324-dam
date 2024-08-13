@@ -4,12 +4,9 @@
 import requests
 from bs4 import BeautifulSoup
 
-URL = 'https://www.flickr.com/explore/'
+URL = 'https://tortocake.com/img/instafeed/landing/tort-1.jpg'
 response = requests.get(URL)
-html = response.text
+print(response.content)
 
-soup = BeautifulSoup(html, 'html.parser')
-img_tags = soup.find_all('a', href=True)
-href_urls = [i.get('href') for i in img_tags if 'photos' in i.get('href')]
-
-print(*href_urls, sep='\n')
+with open('img1.jpg', 'wb') as f:
+    f.write(response.content)
