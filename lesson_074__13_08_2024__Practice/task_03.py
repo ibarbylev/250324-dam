@@ -6,7 +6,15 @@ from bs4 import BeautifulSoup
 
 URL = 'https://www.stroysa.tomsk.ru/catalog/derevyannyy_pogonazh/'
 response = requests.get(URL)
-print(response.content)
+html = response.text
+
+soup = BeautifulSoup(html, 'html.parser')
+cards = soup.find_all('div', class_='catalog-item-info')
+card = cards[0]
+first_tag_a = card.find('a', href=True)
+print(first_tag_a)
+url = f'https://www.stroysa.tomsk.ru{first_tag_a.get('href')}'
+print(url)
 
 # catalog-item-info
 
