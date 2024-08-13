@@ -16,11 +16,11 @@
 from pprint import pprint
 
 import requests
-from local_settings import API
+from local_settings import API_KEY
 
 
 SEARCH_QUERY = 'dogs'
-URL = f'https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key={API}&text={SEARCH_QUERY}&format=json&nojsoncallback=1'
+URL = f'https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key={API_KEY}&text={SEARCH_QUERY}&format=json&nojsoncallback=1'
 
 
 data = ...  # (json object)
