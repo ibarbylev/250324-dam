@@ -23,7 +23,7 @@ def show_movies(cursor, num_cat: str) -> None:
             sakila.film_actor a ON a.film_id = c.film_id
                 LEFT JOIN
             sakila.actor name ON name.actor_id = a.actor_id
-        GROUP BY name.last_name
+        GROUP BY f.film_id, f.title, f.release_year, f.description
         LIMIT 10;
     """
     cursor.execute(query)
