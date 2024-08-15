@@ -32,7 +32,8 @@ def show_fields(cursor, tables: List[str]) -> None:
         query = f'DESCRIBE {table};'
         cursor.execute(query)
         fields = cursor.fetchall()
-        print(*fields, sep='\n')
+        names = [f'{table}.{f[0]}' for f in fields]
+        print(*names, sep='\n')
 
 
 
