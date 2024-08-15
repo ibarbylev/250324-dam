@@ -48,11 +48,11 @@ with mysql.connector.connect(**dbconfig) as connection:
         show_fields(cursor, tables)
 
         # 4. Принять от пользователя имя поля и его значение.
-        text_help_2 = "Введите поле и его значение через пробел: "
-        field_name, value = input(text_help_2).split()
+        text_help_2 = "Введите поле, знак (=|>|<) и значение поля через пробел: "
+        field_name, sign, value = input(text_help_2).split()
 
         # 5. Добавить к запросу из п 2 'WHERE + условие',
         #    - выполнить запрос и
         #    - вывести результат
-        get_rows(cursor, tables, field_name, value)
+        get_rows(cursor, tables, field_name, sign, value)
 

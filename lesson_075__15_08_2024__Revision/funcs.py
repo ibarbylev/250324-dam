@@ -36,9 +36,9 @@ def show_fields(cursor, tables: List[str]) -> None:
         print(*names, sep='\n')
 
 
-def get_rows(cursor, tables, field_name, value):
+def get_rows(cursor, tables, field_name, sign, value):
     query = select_choice(tables)
-    query += f' WHERE {field_name} = {value};'
+    query += f' WHERE {field_name} {sign} {value};'
     # print(query)
     cursor.execute(query)
     rows = cursor.fetchall()
