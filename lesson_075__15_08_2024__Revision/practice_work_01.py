@@ -24,7 +24,7 @@
 
 import mysql.connector
 from local_settings import HOST, USER, PASSWORD, DATABASE
-from funcs import select_choice, show_fields
+from funcs import show_fields, get_rows
 
 dbconfig = {
     'host': HOST,
@@ -36,19 +36,23 @@ dbconfig = {
 with mysql.connector.connect(**dbconfig) as connection:
     with connection.cursor() as cursor:
 
-
         # 1. Предложить пользователю ввести набор таблиц (1, 2, 3)
         text_help = "Введите комбинацию полей [Users, Products, Sales] (1, 2 или 3) через пробел: "
-        tables = input(text_help).split()
+        tables = ["Users", "Products"]
+        # tables = input(text_help).split()
 
         # 2. Из введённых таблиц выбрать 1 их 7 вариантов запросов.
         # query = select_choice(tables) + ';'
 
         # 3. Вывести список полей собранной таблицы.
         show_fields(cursor, tables)
+
         # 4. Принять от пользователя имя поля и его значение.
+        text_help_2 = "Введите поле и его значение через пробел: "
+        field_name, value = input(text_help_2).split()
 
         # 5. Добавить к запросу из п 2 'WHERE + условие',
         #    - выполнить запрос и
         #    - вывести результат
+        get_rows(cursor, tables, field_name, value)
 
