@@ -10,7 +10,9 @@ def input_columns(table):
     if field not in columns[table] and field != "*":
         print("Введено некорректное значение. Будет использовано значение *")
         field = "*"
-    return "SELECT " + field + " "
+    return "SELECT " + field + " FROM " + table
 
+
+print(input_columns("users"))
 
 

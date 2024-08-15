@@ -22,3 +22,29 @@
 найти записи, в которых выбранное поле больше, меньше или равно введенному значению.
 """
 
+import mysql.connector
+from local_settings import HOST, USER, PASSWORD, DATABASE
+
+dbconfig = {
+    'host': HOST,
+    'user': USER,
+    'password': PASSWORD,
+    'database': DATABASE,
+}
+
+with mysql.connector.connect(**dbconfig) as connection:
+    with connection.cursor() as cursor:
+        pass
+
+    # 1 Предложить пользователю ввести набор таблиц (1, 2, 3)
+
+    # 2. Из введённых таблиц выбрать 1 их 7 вариантов запросов.
+
+    # 3. Вывести список полей собранной таблицы.
+
+    # 4. Принять от пользователя имя поля и его значение.
+
+    # 5. Добавить к запросу из п 2 'WHERE + условие',
+    #    - выполнить запрос и
+    #    - вывести результат
+
