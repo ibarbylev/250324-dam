@@ -14,3 +14,30 @@
 ВАЖНО: программа должна запускаться из терминала.
 """
 
+import mysql.connector
+from local_settings import HOST, USER, PASSWORD, DATABASE
+from funcs import show_cats, show_movies
+
+dbconfig = {
+    'host': HOST,
+    'user': USER,
+    'password': PASSWORD,
+    'database': DATABASE,
+}
+
+
+with mysql.connector.connect(**dbconfig) as connection:
+    with connection.cursor() as cursor:
+
+        # 1. Сделать запрос по списку категорий и вывесит категории на печать
+        show_cats(cursor)
+
+        # 2. Ввод пользователем номера категории
+        while True:
+            num_cat = input("Выберите номер категории: ")
+            if num_cat.isdigit():
+                break
+            print('Пожалуйста, введите номер категории!')
+
+        # 3. Сделать запрос по выбранной категории и вывести на печать 10 первый строк.
+        show_movies(cursor, num_cat)
