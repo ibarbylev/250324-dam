@@ -24,6 +24,7 @@
 
 import mysql.connector
 from local_settings import HOST, USER, PASSWORD, DATABASE
+from funcs import select_choice, show_fields
 
 dbconfig = {
     'host': HOST,
@@ -34,14 +35,32 @@ dbconfig = {
 
 with mysql.connector.connect(**dbconfig) as connection:
     with connection.cursor() as cursor:
-        pass
+        table = 'Users'
+        query = f'DESCRIBE {table};'
+        cursor.execute(query)
+        fields = cursor.fetchall()
+        print(*fields, sep='\n')
 
-    # 1 Предложить пользователю ввести набор таблиц (1, 2, 3)
+
+
+
+
+
+
+
+
+
+
+
+    # 1. Предложить пользователю ввести набор таблиц (1, 2, 3)
+    text_help = "Введите комбинацию полей [Users, Products, Sales] (1, 2 или 3) через пробел: "
+    tables = input(text_help).split()
 
     # 2. Из введённых таблиц выбрать 1 их 7 вариантов запросов.
+    # query = select_choice(tables) + ';'
 
     # 3. Вывести список полей собранной таблицы.
-
+    show_fields(cursor, tables)
     # 4. Принять от пользователя имя поля и его значение.
 
     # 5. Добавить к запросу из п 2 'WHERE + условие',
