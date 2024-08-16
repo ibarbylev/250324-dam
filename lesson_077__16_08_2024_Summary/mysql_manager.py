@@ -6,10 +6,8 @@ from query_temlates import s_query
 class MixinMySQLQuery:
     def simple_select(self, query, value):
         try:
-            # self.cursor.execute(query, (value,))
-            self.cursor.execute("SELECT * FROM Users;")
+            self.cursor.execute(query.format(value))
             rows = self.cursor.fetchall()
-
             return rows
 
         except Exception as e:
@@ -36,12 +34,16 @@ class MySQLConnection(MixinMySQLQuery):
 
 if __name__ == '__main__':
     with MySQLConnection(dbconfig) as db:
-        # db.cursor.execute('SELECT * FROM Users;')
-        # rows = db.cursor.fetchall()
-        rows = db.simple_select(s_query, 'Users')
+
+        # 1. Проверка создания подключения
+        db.cursor.execute('SELECT * FROM Users;')
+        rows = db.cursor.fetchall()
         assert rows[0] == (1, 'John Doe', 30), "Error!"
         assert rows[0] != (11, 'John Doe', 30), "Error!"
 
-
+        # 2. Проверка метода .simple_select()
+        rows = db.simple_select(s_query, 'Users')
+        assert rows[0] == (1, 'John Doe', 30), "Error!"
+        assert rows[0] != (11, 'John Doe', 30), "Error!"
 
         print("Тесты успешно прошли!")

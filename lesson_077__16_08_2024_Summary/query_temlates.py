@@ -1,1 +1,1 @@
-s_query = "SELECT * FROM %s ;"
+s_query = "SELECT * FROM {} ;"
