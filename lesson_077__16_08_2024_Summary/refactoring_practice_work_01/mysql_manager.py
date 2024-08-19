@@ -61,9 +61,12 @@ if __name__ == '__main__':
         assert rows[0] == (1, 'John Doe', 30), "Error!"
         assert rows[0] != (11, 'John Doe', 30), "Error!"
 
+        # 3. Проверка метода .is_exist_table()
+        # 3.1 если имя таблицы существует
         is_exist = db.is_exist_table(get_tables_name_query, 'Users')
         assert is_exist == True, "Error!"
 
+        # 3.2 если имя таблицы НЕ существует
         is_exist = db.is_exist_table(get_tables_name_query, 'Users1')
         assert is_exist == False, "Error!"
 
