@@ -1,14 +1,29 @@
 import mysql.connector
 from local_settings import dbconfig
-from query_templates import s_query
+from query_templates import *
 
 
 class MixinMySQLQuery:
     def simple_select(self, query, value):
+        if self.is_exist_table(get_tables_name_query, value):
+
+            try:
+                self.cursor.execute(query.format(value))
+                rows = self.cursor.fetchall()
+                return rows
+
+            except Exception as e:
+                print(f"{e.__class__.__name__}: {e}")
+
+    def is_exist_table(self, get_tables_name_query, table_name) -> bool:
         try:
-            self.cursor.execute(query.format(value))
-            rows = self.cursor.fetchall()
-            return rows
+            query = get_tables_name_query.format(table_name)
+            self.cursor.execute(query)
+            result = list(self.cursor)
+            if not result:
+                print(f"Тhe table <{table_name}> does not exist!")
+                return False
+            return True
 
         except Exception as e:
             print(f"{e.__class__.__name__}: {e}")
@@ -45,5 +60,11 @@ if __name__ == '__main__':
         rows = db.simple_select(s_query, 'Users')
         assert rows[0] == (1, 'John Doe', 30), "Error!"
         assert rows[0] != (11, 'John Doe', 30), "Error!"
+
+        is_exist = db.is_exist_table(get_tables_name_query, 'Users')
+        assert is_exist == True, "Error!"
+
+        is_exist = db.is_exist_table(get_tables_name_query, 'Users1')
+        assert is_exist == False, "Error!"
 
         print("Тесты успешно прошли!")
