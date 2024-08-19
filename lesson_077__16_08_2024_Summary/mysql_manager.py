@@ -1,6 +1,6 @@
 import mysql.connector
 from local_settings import dbconfig
-from query_temlates import s_query
+from query_templates import s_query
 
 
 class MixinMySQLQuery:
